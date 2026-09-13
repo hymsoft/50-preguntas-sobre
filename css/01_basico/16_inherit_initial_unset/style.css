@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  margin-inline: auto;
+  max-width: 800px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Forzar herencia*/
+.hijo {
+  color: inherit;
+  background: #4a90e2;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Resetear a valor por defecto*/
+.titulo {
+  margin: initial;
+  background: #50e3c2;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Resetear completamente*/
+.reset {
+  all: unset;
+  background: #f5a623;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Ejemplo práctico*/
+.contenedor {
+  color: blue;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.hijo-especial {
+  color: inherit;    /*Hereda blue del padre */
+  font-size: initial; /* Resetea a 1rem (valor por defecto)*/
+  background: #f8e71c;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

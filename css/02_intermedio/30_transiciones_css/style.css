@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Botón con transición suave*/
+.boton {
+  background: blue;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease-out;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 1rem;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.boton:hover {
+  background: darkblue;
+  transform: scale(1.05);
+}
+
+/*Card con transición de sombra*/
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 40px;
+  border: 2px dashed #bbb;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.card p {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}

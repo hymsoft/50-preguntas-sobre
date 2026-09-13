@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*style.css — Método 3: Externo*/
+.externo {
+  color: purple;
+  font-size: 1.2rem;
+  border: 1px solid purple;
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}

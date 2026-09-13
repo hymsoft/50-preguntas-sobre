@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cómo se agrupan campos relacionados en un formulario?</title>
+</head>
+<body>
+<form action="procesar.html" method="post">
+  <fieldset>
+    <legend>Datos de envío</legend>
+    <p>
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion">
+    </p>
+    <p>
+      <label for="ciudad">Ciudad:</label>
+      <input type="text" id="ciudad" name="ciudad">
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Método de pago</legend>
+    <p>
+      <input type="radio" name="pago" value="tarjeta"> Tarjeta
+      <input type="radio" name="pago" value="contrareembolso"> Contrareembolso
+    </p>
+  </fieldset>
+</form>
+</body>
+</html>

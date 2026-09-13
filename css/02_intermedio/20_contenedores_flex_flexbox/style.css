@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  margin-inline: auto;
+  max-width: 800px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Contenedor flex con distribución básica*/
+.contenedor-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Items flex con diferentes comportamientos */
+.item {
+  flex: 1 1 200px; /* crece, encoge, base 200px*/
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+}
+
+.item-fijo {
+  flex: 0 0 auto; /*no crece ni encoge*/
+  background: #50e3c2;
+  color: #333;
+}
+
+.item-crece {
+  flex: 2 1 200px; /*crece el doble que otros items con flex: 1, misma base*/
+  background: #f5a623;
+  color: white;
+}

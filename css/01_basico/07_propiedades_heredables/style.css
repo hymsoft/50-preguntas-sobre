@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Forzar herencia de padding con inherit*/
+.hijo {
+  padding: inherit;
+  background: #f8e71c;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Resetear herencia con initial*/
+.hijo {
+  color: initial;
+}
+
+/*Ejemplo práctico: un contenedor con estilos heredados*/
+.contenedor {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Todos los hijos heredarán esos estilos de texto */
+.contenedor p {
+  /* font-family, color y line-height se heredan automáticamente*/
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.contenedor p.hijo {
+  background: #f8e71c;
+}

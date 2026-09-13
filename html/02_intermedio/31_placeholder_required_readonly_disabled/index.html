@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Para qué sirven los atributos placeholder, required, readonly y disabled?</title>
+</head>
+<body>
+<form action="procesar.html" method="post">
+  <p>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" placeholder="Ej.: ana.garcia">
+  </p>
+  <p>
+    <label for="clave">Contraseña:</label>
+    <input type="password" id="clave" name="clave" required>
+  </p>
+  <p>
+    <label for="correo">Correo:</label>
+    <input type="email" id="correo" name="correo" value="ana@ejemplo.com" readonly>
+  </p>
+  <p>
+    <label for="pais">País:</label>
+    <input type="text" id="pais" name="pais" value="Argentina" disabled>
+  </p>
+</form>
+</body>
+</html>

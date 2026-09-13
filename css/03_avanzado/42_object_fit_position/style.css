@@ -1,0 +1,58 @@
+body { font-family: Arial, sans-serif; margin: 0 auto; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; box-sizing: border-box; }
+
+/*Imagen que cubre su contenedor sin deformarse*/
+.imagen-cover {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #4a90e2;
+  border-radius: 6px;
+}
+
+/*Imagen contenida con espacios*/
+.imagen-contain {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  object-fit: contain;
+  background-color: #50e3c2;
+  display: block;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  border-radius: 6px;
+}
+
+/*Video con posicion personalizada*/
+.video {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: 50% 30%;
+  display: block;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #f5a623;
+  border-radius: 6px;
+}
+
+/*Avatar circular con recorte centrado*/
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #d0021b;
+}

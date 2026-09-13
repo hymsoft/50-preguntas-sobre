@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Qué tipos de <input> existen y cuándo conviene usar cada uno?</title>
+</head>
+<body>
+<form action="procesar.html" method="post">
+  <p>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+  </p>
+  <p>
+    <label for="clave">Contraseña:</label>
+    <input type="password" id="clave" name="clave">
+  </p>
+  <p>
+    <label for="correo">Correo:</label>
+    <input type="email" id="correo" name="correo">
+  </p>
+  <p>
+    <label for="sitio">Sitio web:</label>
+    <input type="url" id="sitio" name="sitio">
+  </p>
+  <p>
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono">
+  </p>
+  <p>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad">
+  </p>
+  <p>
+    <label for="nacimiento">Fecha de nacimiento:</label>
+    <input type="date" id="nacimiento" name="nacimiento">
+  </p>
+  <p>
+    <label for="hora">Hora de la cita:</label>
+    <input type="time" id="hora" name="hora">
+  </p>
+  <p>
+    <label for="busqueda">Búsqueda:</label>
+    <input type="search" id="busqueda" name="busqueda">
+  </p>
+  <p>
+    <input type="checkbox" id="novedades" name="novedades" value="si">
+    <label for="novedades">¿Recibir novedades?</label>
+  </p>
+  <p>Plan:</p>
+  <ul>
+    <li>
+      <input type="radio" id="basico" name="plan" value="basico">
+      <label for="basico">Básico</label>
+    </li>
+    <li>
+      <input type="radio" id="pro" name="plan" value="pro">
+      <label for="pro">Pro</label>
+    </li>
+  </ul>
+  <p>
+    <label for="foto">Foto de perfil:</label>
+    <input type="file" id="foto" name="foto">
+  </p>
+</form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+body { font-family: Arial, sans-serif; margin: 0 auto; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+/*Barra de progreso de lectura*/
+.barra-progreso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #3498db;
+  width: 100%;
+  transform-origin: left;
+  animation: crecer linear;
+  animation-timeline: scroll();
+}
+
+@keyframes crecer {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/*Elementos que aparecen al hacer scroll*/
+.seccion {
+  animation: aparecer ease-out both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 40%;
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 2px dashed #bbb;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #4a90e2;
+  color: white;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.seccion:nth-of-type(2) { background: #50e3c2; color: #333; }
+.seccion:nth-of-type(3) { background: #f5a623; color: white; }
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*Contador animado por scroll*/
+.contador {
+  display: inline-block;
+  animation: contar linear;
+  animation-timeline: scroll();
+  background: #d0021b;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes contar {
+  from {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}

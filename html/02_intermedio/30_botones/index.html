@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Qué diferencia hay entre los botones submit, reset y button?</title>
+</head>
+<body>
+<form action="procesar.html" method="post">
+  <p>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+  </p>
+  <p>
+    <input type="submit" value="Enviar con input">
+    <button type="submit">Enviar con button</button>
+    <button type="button">Botón sin efecto</button>
+  </p>
+  <!-- El tipo reset existe, pero no se recomienda su uso -->
+</form>
+</body>
+</html>

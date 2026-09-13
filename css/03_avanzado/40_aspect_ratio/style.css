@@ -1,0 +1,74 @@
+/*Cuadrado perfecto para avatares*/
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+h1, h2 {
+  text-align: center;
+}
+
+.avatar {
+  width: 80px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #4a90e2;
+  display: block;
+  margin-bottom: 40px;
+}
+
+/*Tarjetas con imagen proporcional*/
+.tarjeta-imagen {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #50e3c2;
+  display: block;
+  border-radius: 6px;
+  margin-bottom: 40px;
+}
+
+/*Video responsivo*/
+.video-contenedor {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/*Galería responsiva*/
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+.galeria-item {
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+  background: #4a90e2;
+}
+
+.galeria-item:nth-child(2) {
+  background: #f5a623;
+}
+
+.galeria-item:nth-child(3) {
+  background: #d0021b;
+}

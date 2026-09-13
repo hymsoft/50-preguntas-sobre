@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Tamaño con rem*/
+.titulo {
+  font-size: 2rem;
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Tamaño con porcentaje*/
+.subtitulo {
+  font-size: 150%;
+  background: #50e3c2;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Interlineado*/
+.parrafo {
+  line-height: 1.6;
+  background: #f5a623;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Tipografía completa*/
+.cuerpo {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.6;
+  color: #333;
+  background: #f8e71c;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}

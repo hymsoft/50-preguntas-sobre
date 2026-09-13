@@ -1,0 +1,83 @@
+/*Variables globales*/
+:root {
+  --color-primario: #3498db;
+  --color-texto: #333;
+  --espaciado-base: 1rem;
+  --radio-borde: 8px;
+  --fuente-base: system-ui, -apple-system, sans-serif;
+}
+
+/*Organización con capas*/
+@layer base, componentes, utilidades;
+
+@layer base {
+  body {
+    font-family: var(--fuente-base);
+    color: var(--color-texto);
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f4f4f4;
+    max-width: 800px;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+}
+
+@layer componentes {
+  .card {
+    container-type: inline-size;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-base);
+    background: #fff;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  /*Título de tarjeta: texto real alineado a la izquierda (no botón),
+     para que se aprecien text-wrap:balance y el clamp() tipográfico*/
+  .card__titulo {
+    text-wrap: balance;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: var(--color-texto);
+    text-align: left;
+    line-height: 1.2;
+    margin: 0 0 var(--espaciado-base);
+  }
+
+  /*Párrafo de tarjeta: texto real (no botón)*/
+  .card p {
+    color: var(--color-texto);
+    text-align: left;
+    font-weight: normal;
+    line-height: 1.6;
+    margin: 0 0 var(--espaciado-base);
+  }
+
+  /*Este SÍ es un botón en el HTML: conserva sus valores del concepto*/
+  .boton {
+    background-color: var(--color-primario);
+    color: white;
+    padding: var(--espaciado-base);
+    border: none;
+    border-radius: var(--radio-borde);
+    cursor: pointer;
+  }
+
+  .boton:focus-visible {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilidades {
+  .oculto-visually {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+}

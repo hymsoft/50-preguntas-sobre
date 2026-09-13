@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Unidades absolutas*/
+.ancho-fijo {
+  width: 200px;
+  background: #50e3c2;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Unidades relativas*/
+.ancho-relativo {
+  width: 50%;
+  background: #f5a623;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ancho-rem {
+  width: 10rem;
+  background: #7ed321;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Unidades de viewport*/
+.ancho-vista {
+  width: 80vw;
+  background: #9013fe;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Tamaño de fuente responsivo*/
+.titulo {
+  font-size: 5vw;
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

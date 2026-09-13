@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Qué son los elementos <template> y <slot>?</title>
+</head>
+<body>
+<template id="plantilla-tarjeta">
+  <article>
+    <h2><slot name="titulo">Título por defecto</slot></h2>
+    <p><slot name="descripcion">Descripción por defecto</slot></p>
+  </article>
+</template>
+
+<div slot="titulo">Mi primera tarjeta</div>
+<p slot="descripcion">Contenido que llenará el hueco de descripción.</p>
+</body>
+</html>

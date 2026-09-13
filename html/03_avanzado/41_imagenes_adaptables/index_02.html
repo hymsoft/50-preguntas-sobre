@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cómo se crean imágenes adaptables?</title>
+</head>
+<body>
+<picture>
+  <source media="(max-width: 600px)" type="image/webp" srcset="paisaje-movil.webp">
+  <source media="(max-width: 600px)" srcset="paisaje-movil.jpg">
+  <source type="image/webp" srcset="paisaje.webp">
+  <img src="paisaje.jpg" alt="Paisaje montañoso al atardecer"
+       width="800" height="600">
+</picture>
+</body>
+</html>

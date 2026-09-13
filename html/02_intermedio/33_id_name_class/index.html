@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuál es la diferencia entre los atributos id, name y class?</title>
+</head>
+<body>
+<!-- id: identificador único del elemento -->
+<p id="bienvenida">Hola, bienvenido.</p>
+
+<!-- name: nombre del control en el envío del formulario -->
+<form action="procesar.html" method="post">
+  <p>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario">
+  </p>
+  <p>
+    <input type="radio" name="plan" value="basico"> Básico
+    <input type="radio" name="plan" value="pro"> Pro
+  </p>
+</form>
+
+<!-- class: clasificación compartida por varios elementos -->
+<div class="tarjeta destacada">Contenido clasificado.</div>
+</body>
+</html>

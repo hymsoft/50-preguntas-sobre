@@ -1,0 +1,73 @@
+body { font-family: Arial, sans-serif; margin: 0 auto; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+/*Imagen con forma de diamante*/
+.diamante {
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: block;
+  margin-bottom: 40px;
+  background: #4a90e2;
+}
+
+/*Estrella de cinco puntas*/
+.estrella {
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 91%, 50% 70%,
+    21% 91%, 32% 57%, 2% 35%,
+    39% 35%
+  );
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin-bottom: 40px;
+  background: #50e3c2;
+}
+
+/*Botón con forma personalizada*/
+.boton-forma {
+  clip-path: inset(0 round 12px);
+  background: #3498db;
+  color: white;
+  padding: 20px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/*Hover que transforma la forma*/
+.tarjeta-hover {
+  clip-path: inset(0 round 16px);
+  transition: clip-path 0.3s ease;
+  background: #f5a623;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.tarjeta-hover:hover {
+  clip-path: inset(8px round 16px);
+}
+
+/*Imagen con forma de ojo*/
+.ojo {
+  clip-path: ellipse(50% 35% at 50% 50%);
+  width: 300px;
+  height: 200px;
+  display: block;
+  margin-bottom: 40px;
+  background: #d0021b;
+}

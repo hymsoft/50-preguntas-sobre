@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especificidad en CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p>Párrafo con selector de tipo: azul (especificidad 0-0-1).</p>
+  <p class="texto">Párrafo con la clase "texto": rojo (especificidad 0-1-0).</p>
+  <p id="titulo" class="texto">Párrafo con id y clase: verde, el ID tiene mayor especificidad (1-0-0).</p>
+</body>
+</html>

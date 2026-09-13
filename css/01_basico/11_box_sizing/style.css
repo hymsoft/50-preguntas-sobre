@@ -1,0 +1,50 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  margin-inline: auto;
+  max-width: 800px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Content-box (por defecto) */
+.caja-content {
+  box-sizing: content-box;
+  width: 200px;
+  padding: 20px;
+  /* Ancho total: 240px*/
+  margin-bottom: 20px;
+  margin-inline: auto;
+  background: #4a90e2;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Border-box (recomendado) */
+.caja-border {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  /* Ancho total: 200px*/
+  margin-inline: auto;
+  background: #50e3c2;
+  color: #333;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Reset universal para border-box*/
+*,*::before, *::after {
+  box-sizing: border-box;
+}

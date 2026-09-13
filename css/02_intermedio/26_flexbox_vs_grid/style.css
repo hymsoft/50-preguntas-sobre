@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Flexbox para una barra de navegación*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Grid para un layout de página completo*/
+.page {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  min-height: 100vh;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  gap: 8px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Asignación de cada hijo a su área del Grid*/
+.page > header {
+  grid-area: header;
+}
+
+.page > aside {
+  grid-area: sidebar;
+}
+
+.page > main {
+  grid-area: main;
+}
+
+.page > footer {
+  grid-area: footer;
+}
+
+/*Combinación: Grid para layout, Flexbox para items*/
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  align-items: center;
+}
+
+.card-grid .card-content:nth-child(2) {
+  background: #50e3c2;
+  color: #333;
+}
+
+.nav span,
+.nav a {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a:nth-of-type(2) {
+  background: #50e3c2;
+  color: #333;
+}
+
+.nav a:nth-of-type(3) {
+  background: #f5a623;
+}
+
+.page > header,
+.page > aside,
+.page > main,
+.page > footer {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page > aside {
+  background: #50e3c2;
+  color: #333;
+}
+
+.page > main {
+  background: #f5a623;
+}
+
+.page > footer {
+  background: #d0021b;
+}
+
+.card-content h2,
+.card-content p {
+  margin: 8px 0;
+}

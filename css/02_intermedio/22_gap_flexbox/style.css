@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Gap uniforme en ambos ejes*/
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+/*Gap diferente para filas y columnas */
+.contenedor-diferente {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 10px;
+  width: 300px; /* acota el ancho para forzar que los ítems no entren todos en una sola línea*/
+  margin-inline: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+.contenedor-diferente > div {
+  flex: 0 0 120px; /*ancho fijo: 3 ítems de 120px no caben en 300px, así se generan dos líneas y se ve el row-gap*/
+}
+
+/*Comparación: gap vs margin */
+/* Con gap (limpio y uniforme)*/
+.con-gap {
+  display: flex;
+  gap: 16px;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+/*Con margin (requiere ajustes para el primer/último)*/
+.con-margin {
+  display: flex;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+.con-margin > *{
+  margin: 8px;
+}
+.con-margin >*:first-child {
+  margin-left: 0;
+}
+.con-margin > *:last-child {
+  margin-right: 0;
+}
+
+.contenedor > div,
+.contenedor-diferente > div,
+.con-gap > div,
+.con-margin > div {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor > div:nth-child(2),
+.contenedor-diferente > div:nth-child(2),
+.con-gap > div:nth-child(2),
+.con-margin > div:nth-child(2) {
+  background: #50e3c2;
+  color: #333;
+}
+
+.contenedor > div:nth-child(3),
+.contenedor-diferente > div:nth-child(3),
+.con-gap > div:nth-child(3),
+.con-margin > div:nth-child(3) {
+  background: #f5a623;
+}

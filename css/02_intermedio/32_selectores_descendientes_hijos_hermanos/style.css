@@ -1,0 +1,78 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+article {
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+article div {
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+p {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Selector descendiente: todos los párrafos dentro de article*/
+article p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/*Selector hijo directo: solo párrafos hijos directos*/
+article > p {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+article div p {
+  background: #50e3c2;
+  color: #333;
+}
+
+/*Selector hermano general: todos los párrafos después de h2*/
+h2 ~ p {
+  color: #555;
+  padding-left: 1rem;
+  background: #d0021b;
+}
+
+/*Selector hermano adyacente: primer párrafo después de h2 */
+/* Va después para que gane por cascada (misma especificidad) y se vea la diferencia*/
+h2 + p {
+  font-size: 1.2rem;
+  color: #333;
+  background: #f5a623;
+}
+
+/*Selector de atributo: enlaces externos*/
+a[target="_blank"]::after {
+  content: "\2197";
+  font-size: 0.8em;
+}
+
+a[target="_blank"] {
+  background: #7ed321;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+}

@@ -1,0 +1,352 @@
+[
+  {
+    "num": "01",
+    "titulo": "¿Qué es CSS?",
+    "nivel": "basico",
+    "carpeta": "01_basico/01_que_es_css/",
+    "url": "01_basico/01_que_es_css/index.html"
+  },
+  {
+    "num": "02",
+    "titulo": "Conectar CSS con HTML",
+    "nivel": "basico",
+    "carpeta": "01_basico/02_conectar_hoja_estilos/",
+    "url": "01_basico/02_conectar_hoja_estilos/index.html"
+  },
+  {
+    "num": "03",
+    "titulo": "Selectores CSS: tipo, clase e ID",
+    "nivel": "basico",
+    "carpeta": "01_basico/03_diferencia_selectores/",
+    "url": "01_basico/03_diferencia_selectores/index.html"
+  },
+  {
+    "num": "04",
+    "titulo": "Ejemplo de métodos CSS",
+    "nivel": "basico",
+    "carpeta": "01_basico/04_estilos_linea_internos_externos/",
+    "url": "01_basico/04_estilos_linea_internos_externos/index.html"
+  },
+  {
+    "num": "05",
+    "titulo": "Especificidad en CSS",
+    "nivel": "basico",
+    "carpeta": "01_basico/05_especificidad/",
+    "url": "01_basico/05_especificidad/index.html"
+  },
+  {
+    "num": "06",
+    "titulo": "Herencia en CSS",
+    "nivel": "basico",
+    "carpeta": "01_basico/06_herencia/",
+    "url": "01_basico/06_herencia/index.html"
+  },
+  {
+    "num": "07",
+    "titulo": "Propiedades heredables en CSS",
+    "nivel": "basico",
+    "carpeta": "01_basico/07_propiedades_heredables/",
+    "url": "01_basico/07_propiedades_heredables/index.html"
+  },
+  {
+    "num": "08",
+    "titulo": "Colores de texto y fondo",
+    "nivel": "basico",
+    "carpeta": "01_basico/08_colores_textos_fondos/",
+    "url": "01_basico/08_colores_textos_fondos/index.html"
+  },
+  {
+    "num": "09",
+    "titulo": "Unidades de medida en CSS",
+    "nivel": "basico",
+    "carpeta": "01_basico/09_unidades_medida/",
+    "url": "01_basico/09_unidades_medida/index.html"
+  },
+  {
+    "num": "10",
+    "titulo": "Tamaño de fuente",
+    "nivel": "basico",
+    "carpeta": "01_basico/10_tamano_fuente/",
+    "url": "01_basico/10_tamano_fuente/index.html"
+  },
+  {
+    "num": "11",
+    "titulo": "Box-sizing",
+    "nivel": "basico",
+    "carpeta": "01_basico/11_box_sizing/",
+    "url": "01_basico/11_box_sizing/index.html"
+  },
+  {
+    "num": "12",
+    "titulo": "Margin y Padding",
+    "nivel": "basico",
+    "carpeta": "01_basico/12_margin_padding/",
+    "url": "01_basico/12_margin_padding/index.html"
+  },
+  {
+    "num": "13",
+    "titulo": "Display: block, inline e inline-block",
+    "nivel": "basico",
+    "carpeta": "01_basico/13_display_block_inline/",
+    "url": "01_basico/13_display_block_inline/index.html"
+  },
+  {
+    "num": "14",
+    "titulo": "Bordes en CSS",
+    "nivel": "basico",
+    "carpeta": "01_basico/14_bordes/",
+    "url": "01_basico/14_bordes/index.html"
+  },
+  {
+    "num": "15",
+    "titulo": "Sombras en CSS",
+    "nivel": "basico",
+    "carpeta": "01_basico/15_sombras/",
+    "url": "01_basico/15_sombras/index.html"
+  },
+  {
+    "num": "16",
+    "titulo": "inherit, initial y unset",
+    "nivel": "basico",
+    "carpeta": "01_basico/16_inherit_initial_unset/",
+    "url": "01_basico/16_inherit_initial_unset/index.html"
+  },
+  {
+    "num": "17",
+    "titulo": "Organización de propiedades CSS",
+    "nivel": "basico",
+    "carpeta": "01_basico/17_organizar_propiedades/",
+    "url": "01_basico/17_organizar_propiedades/index.html"
+  },
+  {
+    "num": "18",
+    "titulo": "Modelo de caja",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/18_modelo_caja_influencia_diseno/",
+    "url": "02_intermedio/18_modelo_caja_influencia_diseno/index.html"
+  },
+  {
+    "num": "19",
+    "titulo": "Posicionamiento CSS",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/19_posicionamiento_static_relative_absolute/",
+    "url": "02_intermedio/19_posicionamiento_static_relative_absolute/index.html"
+  },
+  {
+    "num": "20",
+    "titulo": "Contenedores flex",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/20_contenedores_flex_flexbox/",
+    "url": "02_intermedio/20_contenedores_flex_flexbox/index.html"
+  },
+  {
+    "num": "21",
+    "titulo": "Alineación con justify-content y align-items",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/21_justify_content_align_items/",
+    "url": "02_intermedio/21_justify_content_align_items/index.html"
+  },
+  {
+    "num": "22",
+    "titulo": "Gap en Flexbox",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/22_gap_flexbox/",
+    "url": "02_intermedio/22_gap_flexbox/index.html"
+  },
+  {
+    "num": "23",
+    "titulo": "Grid Layout — Cuadrícula",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/23_grid_layout_cuadricula/",
+    "url": "02_intermedio/23_grid_layout_cuadricula/index.html"
+  },
+  {
+    "num": "24",
+    "titulo": "Grid — Columnas y Filas",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/24_grid_template_columns_rows/",
+    "url": "02_intermedio/24_grid_template_columns_rows/index.html"
+  },
+  {
+    "num": "25",
+    "titulo": "Grid — Áreas y Zonas",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/25_grid_area_zonas/",
+    "url": "02_intermedio/25_grid_area_zonas/index.html"
+  },
+  {
+    "num": "26",
+    "titulo": "Flexbox vs Grid",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/26_flexbox_vs_grid/",
+    "url": "02_intermedio/26_flexbox_vs_grid/index.html"
+  },
+  {
+    "num": "27",
+    "titulo": "Diseño Responsivo con Media Queries",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/27_media_queries_diseno_responsivo/",
+    "url": "02_intermedio/27_media_queries_diseno_responsivo/index.html"
+  },
+  {
+    "num": "28",
+    "titulo": "Breakpoints Comunes",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/28_breakpoints_comunes/",
+    "url": "02_intermedio/28_breakpoints_comunes/index.html"
+  },
+  {
+    "num": "29",
+    "titulo": "Transformaciones CSS",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/29_transform_elementos/",
+    "url": "02_intermedio/29_transform_elementos/index.html"
+  },
+  {
+    "num": "30",
+    "titulo": "Transiciones CSS",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/30_transiciones_css/",
+    "url": "02_intermedio/30_transiciones_css/index.html"
+  },
+  {
+    "num": "31",
+    "titulo": "Animaciones con @keyframes",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/31_animaciones_keyframes/",
+    "url": "02_intermedio/31_animaciones_keyframes/index.html"
+  },
+  {
+    "num": "32",
+    "titulo": "Selectores Avanzados",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/32_selectores_descendientes_hijos_hermanos/",
+    "url": "02_intermedio/32_selectores_descendientes_hijos_hermanos/index.html"
+  },
+  {
+    "num": "33",
+    "titulo": "Pseudoclases CSS",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/33_pseudoclases_hover_focus_nth_child/",
+    "url": "02_intermedio/33_pseudoclases_hover_focus_nth_child/index.html"
+  },
+  {
+    "num": "34",
+    "titulo": "Pseudoelementos CSS",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/34_pseudoelementos_before_after_first_line/",
+    "url": "02_intermedio/34_pseudoelementos_before_after_first_line/index.html"
+  },
+  {
+    "num": "35",
+    "titulo": "Custom Properties",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/35_custom_properties/",
+    "url": "03_avanzado/35_custom_properties/index.html"
+  },
+  {
+    "num": "36",
+    "titulo": "Uso de var()",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/36_variables_css_var/",
+    "url": "03_avanzado/36_variables_css_var/index.html"
+  },
+  {
+    "num": "37",
+    "titulo": "Función calc()",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/37_calc/",
+    "url": "03_avanzado/37_calc/index.html"
+  },
+  {
+    "num": "38",
+    "titulo": "min(), max() y clamp()",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/38_min_max_clamp/",
+    "url": "03_avanzado/38_min_max_clamp/index.html"
+  },
+  {
+    "num": "39",
+    "titulo": "Container Queries",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/39_container_queries/",
+    "url": "03_avanzado/39_container_queries/index.html"
+  },
+  {
+    "num": "40",
+    "titulo": "aspect-ratio",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/40_aspect_ratio/",
+    "url": "03_avanzado/40_aspect_ratio/index.html"
+  },
+  {
+    "num": "41",
+    "titulo": "Subgrid",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/41_subgrid/",
+    "url": "03_avanzado/41_subgrid/index.html"
+  },
+  {
+    "num": "42",
+    "titulo": "object-fit y object-position",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/42_object_fit_position/",
+    "url": "03_avanzado/42_object_fit_position/index.html"
+  },
+  {
+    "num": "43",
+    "titulo": "Funciones de color",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/43_funciones_color/",
+    "url": "03_avanzado/43_funciones_color/index.html"
+  },
+  {
+    "num": "44",
+    "titulo": "Gradientes CSS",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/44_gradientes/",
+    "url": "03_avanzado/44_gradientes/index.html"
+  },
+  {
+    "num": "45",
+    "titulo": "Filtros CSS",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/45_filtros_css/",
+    "url": "03_avanzado/45_filtros_css/index.html"
+  },
+  {
+    "num": "46",
+    "titulo": "clip-path",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/46_clip_path/",
+    "url": "03_avanzado/46_clip_path/index.html"
+  },
+  {
+    "num": "47",
+    "titulo": "Scroll-Driven Animations",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/47_scroll_driven_animations/",
+    "url": "03_avanzado/47_scroll_driven_animations/index.html"
+  },
+  {
+    "num": "48",
+    "titulo": "text-wrap",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/48_text_wrap/",
+    "url": "03_avanzado/48_text_wrap/index.html"
+  },
+  {
+    "num": "49",
+    "titulo": "View Transitions",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/49_view_transitions/",
+    "url": "03_avanzado/49_view_transitions/index.html"
+  },
+  {
+    "num": "50",
+    "titulo": "Buenas prácticas de CSS",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/50_buenas_practicas/",
+    "url": "03_avanzado/50_buenas_practicas/index.html"
+  }
+]

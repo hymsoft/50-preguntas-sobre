@@ -1,0 +1,50 @@
+/*Definición global de variables*/
+:root {
+  --color-primario: #3498db;
+  --color-secundario: #2ecc71;
+  --espaciado-sm: 8px;
+  --espaciado-md: 16px;
+  --espaciado-lg: 24px;
+  --radio-borde: 8px;
+}
+
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+/*Uso de las variables en un componente*/
+.boton {
+  background-color: var(--color-primario);
+  padding: var(--espaciado-sm) var(--espaciado-md);
+  border: none;
+  border-radius: var(--radio-borde);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.boton--secundario {
+  background-color: var(--color-secundario);
+}
+
+/*Variable local que sobreescribe la global*/
+.alerta {
+  --color-primario: #e74c3c;
+  background-color: var(--color-primario);
+  padding: var(--espaciado-md);
+  border-radius: var(--radio-borde);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  border: 2px dashed #bbb;
+  max-width: 500px;
+  margin-inline: auto;
+}

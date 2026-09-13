@@ -1,0 +1,112 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+article, ul {
+  margin-bottom: 40px;
+  padding: 16px 20px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  border-radius: 6px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Enlace con aspecto de enlace (no botón) para que se vea el ::after*/
+.enlace-externo {
+  display: inline-block;
+  margin-bottom: 40px;
+  color: #1a56db;
+  font-weight: bold;
+}
+
+/*Párrafos como texto real alineado a la izquierda (no botones),
+   para que ::first-letter se distinga*/
+article p {
+  color: #333;
+  line-height: 1.6;
+  text-align: left;
+  margin: 0 0 1rem;
+}
+
+article p:last-child {
+  margin-bottom: 0;
+}
+
+/*Intro como texto de varias líneas en peso normal:
+   así ::first-line (bold + #333) sí se distingue*/
+.intro {
+  background: #fff8e6;
+  border-left: 4px solid #f5a623;
+  color: #555;
+  font-weight: normal;
+  text-align: left;
+  line-height: 1.6;
+  padding: 16px 20px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 40px;
+  max-width: 55ch;
+}
+
+/*Lista como lista (sin fondos de botón) para que ::marker se vea*/
+ul {
+  list-style-position: outside;
+}
+
+ul li {
+  color: #333;
+  text-align: left;
+  padding: 4px 0;
+  margin-left: 1.2em;
+}
+
+input {
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 2px solid #4a90e2;
+  margin-bottom: 40px;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/*Icono para enlaces externos*/
+.enlace-externo::after {
+  content: "\2197";
+  font-size: 0.8em;
+  margin-left: 0.25em;
+}
+
+/*Primera letra destacada (capitular): line-height ajustado para que
+   la P asiente ópticamente y el texto no flote en su techo*/
+article > p:first-of-type::first-letter {
+  font-size: 3em;
+  float: left;
+  line-height: 0.8;
+  padding-top: 0.05em;
+  margin-right: 0.1em;
+}
+
+/*Primera línea en negrita*/
+.intro::first-line {
+  font-weight: bold;
+  color: #333;
+}
+
+/*Selección de texto amarilla*/
+::selection {
+  background: yellow;
+  color: black;
+}
+
+/*Placeholder en inputs*/
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/*Decoración de lista*/
+ul li::marker {
+  color: blue;
+  font-size: 1.2em;
+}

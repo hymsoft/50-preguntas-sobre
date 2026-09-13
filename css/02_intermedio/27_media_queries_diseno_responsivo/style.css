@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Estilos base (mobile-first)*/
+.container {
+  padding: 1rem;
+  max-width: 100%;
+  margin-bottom: 40px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+.container h1,
+.container p {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container p {
+  background: #50e3c2;
+  color: #333;
+  font-weight: normal;
+}
+
+/*Tablet (768px en adelante)*/
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+    max-width: 720px;
+    margin: 0 auto 40px;
+  }
+}
+
+/*Desktop (1024px en adelante)*/
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/*Modo oscuro*/
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #1a1a1a;
+    color: #fff;
+  }
+}

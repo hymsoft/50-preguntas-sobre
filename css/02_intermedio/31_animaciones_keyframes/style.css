@@ -1,0 +1,73 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+.animar, .pulsar, .cargando {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/*Animación de fade-in*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animar {
+  animation: fadeIn 0.5s ease-out forwards;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Animación de pulso*/
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.pulsar {
+  animation: pulse 2s ease-in-out infinite;
+  background: #50e3c2;
+  color: #333;
+  width: 120px;
+  height: 120px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Animación de giro (loading)*/
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cargando {
+  animation: spin 1s linear infinite;
+  background: #f5a623;
+  width: 120px;
+  height: 120px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}

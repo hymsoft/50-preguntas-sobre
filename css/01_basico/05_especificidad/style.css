@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Especificidad: 0-0-1 (tipo)*/
+p {
+  color: blue;
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Especificidad: 0-1-0 (clase)*/
+.texto {
+  color: red;
+  background: #f8e71c;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Especificidad: 1-0-0 (ID)*/
+# titulo {
+  color: green;
+  background: #50e3c2;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Ejemplo de resolución: el párrafo será verde porque ID tiene mayor especificidad*/

@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Regla CSS básica: selector { propiedad: valor; } */
+h1 {
+  color: red;           /* Color del texto */
+  font-size: 2.5em;     /* Tamaño de fuente */
+  text-align: center;   /* Alineación*/
+  background: #4a90e2;
+  padding: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+p {
+  color: #333;          /*Color gris oscuro */
+  line-height: 1.6;     /* Interlineado */
+  margin-bottom: 1rem;  /* Espacio inferior*/
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px dashed #bbb;
+  text-align: center;
+  font-weight: bold;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+p:nth-of-type(2) {
+  background: #50e3c2;
+}

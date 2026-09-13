@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  margin-inline: auto;
+  max-width: 800px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Borde completo*/
+.borde-completo {
+  border: 2px solid #000;
+  max-width: 500px;
+  margin-inline: auto;
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/*Bordes individuales*/
+.borde-superior {
+  border-top: 3px dashed red;
+  max-width: 500px;
+  margin-inline: auto;
+  background: #50e3c2;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/*Bordes redondeados*/
+.borde-redondeado {
+  border: 1px solid gray;
+  max-width: 500px;
+  margin-inline: auto;
+  border-radius: 10px;
+  background: #f5a623;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/*Esquinas individuales*/
+.esquinas-personalizadas {
+  border: 1px solid blue;
+  max-width: 500px;
+  margin-inline: auto;
+  border-radius: 10px 20px 30px 40px;
+  background: #d0021b;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/*Sin borde*/
+.sin-borde {
+  border: none;
+  max-width: 500px;
+  margin-inline: auto;
+  background: #7ed321;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

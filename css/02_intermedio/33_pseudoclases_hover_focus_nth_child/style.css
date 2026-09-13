@@ -1,0 +1,86 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+table, body > div, .card {
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.boton, .item, .card p {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+td {
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.item:nth-child(2) {
+  background: #50e3c2;
+  color: #333;
+}
+
+.item:nth-child(3) {
+  background: #f5a623;
+}
+
+tr:nth-child(odd) td {
+  background: #9013fe;
+  color: white;
+}
+
+.card + .card {
+  background: #7ed321;
+}
+
+/*Estado hover*/
+.boton:hover {
+  background: darkblue;
+  transform: scale(1.05);
+}
+
+/*Estado focus (importante para accesibilidad)*/
+.boton:focus {
+  outline: 2px solid blue;
+  outline-offset: 2px;
+}
+
+/*Filas alternas en tablas*/
+tr:nth-child(even) {
+  background: #f5f5f5;
+}
+
+tr:nth-child(even) td {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/*Primer elemento sin margen superior*/
+.item:first-child {
+  margin-top: 0;
+}
+
+/*Todos excepto el último con borde inferior*/
+.item:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+/*Tarjetas que contienen imágenes*/
+.card:has(img) {
+  padding: 0;
+}

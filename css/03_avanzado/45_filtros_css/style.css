@@ -1,0 +1,66 @@
+body { font-family: Arial, sans-serif; margin: 0 auto; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+/*Efecto hover con desenfoque*/
+.imagen {
+  transition: filter 0.3s ease;
+  display: block;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #4a90e2;
+  border-radius: 6px;
+}
+
+.imagen:hover {
+  filter: blur(2px) brightness(110%);
+}
+
+/*Tarjeta con efecto vidrio esmerilado*/
+.tarjeta-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  margin-bottom: 40px;
+  outline: 2px dashed #bbb;
+  outline-offset: 4px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Sombra que respeta la forma del contenido*/
+.icono-con-sombra {
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+  display: block;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #f5a623;
+  border-radius: 6px;
+}
+
+/*Imagen en escala de grises que se colorea al hover*/
+.galeria-img {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+  display: block;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #d0021b;
+  border-radius: 6px;
+}
+
+img.galeria-img:nth-of-type(4) { background: #7ed321; }
+
+.galeria-img:hover {
+  filter: grayscale(0%);
+}

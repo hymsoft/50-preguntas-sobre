@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  margin-inline: auto;
+  max-width: 800px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Shorthand para margin*/
+.margen {
+  margin: 10px 20px 10px 20px;
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Shorthand para font*/
+.fuente {
+  font: italic bold 16px/1.5 "Arial", sans-serif;
+  background: #50e3c2;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Shorthand para background*/
+.fondo {
+  background: linear-gradient(to bottom, #f0f0f0, #d0d0d0) no-repeat center center / cover;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Organización lógica de propiedades */
+.card {
+  /* Modelo de caja*/
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  
+  /*Tipografía*/
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  
+  /*Visual*/
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+}

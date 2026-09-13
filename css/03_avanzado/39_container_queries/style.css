@@ -1,0 +1,64 @@
+/*Definición del contenedor*/
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; margin-inline: auto; box-sizing: border-box; }
+
+.widget {
+  container-type: inline-size;
+  container-name: widget;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+/*Estilos por defecto (modo compacto)*/
+.widget-titulo {
+  font-size: 1rem;
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.widget-contenido {
+  display: block;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+.widget-contenido p {
+  background: #50e3c2;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Cuando el contenedor es amplio*/
+@container widget (min-width: 500px) {
+  .widget-titulo {
+    font-size: 1.5rem;
+  }
+
+  .widget-contenido {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+/*Cuando el contenedor es muy amplio*/
+@container widget (min-width: 800px) {
+  .widget-titulo {
+    font-size: 2rem;
+  }
+
+  .widget-contenido {
+    flex-direction: row;
+  }
+}

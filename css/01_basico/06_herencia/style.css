@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*El color se hereda de padre a hijo*/
+.padre {
+  color: blue;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Los hijos de .padre tendrán color: blue automáticamente */
+.hijo {
+  /* No necesita definir color: hereda blue*/
+  background: #f8e71c;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*El padding NO se hereda*/
+.padre {
+  padding: 20px;
+}
+
+/*Los hijos NO tendrán padding automáticamente*/

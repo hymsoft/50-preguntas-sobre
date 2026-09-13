@@ -1,0 +1,86 @@
+body { font-family: Arial, sans-serif; margin: 0 auto; padding: 20px; background: #f4f4f4; color: #333; max-width: 800px; box-sizing: border-box; }
+
+/*Botón con degradado sutil*/
+.boton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+/*Hero con degradado multicapa*/
+.hero {
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+    linear-gradient(to right, #1a1a2e, #16213e);
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  margin-bottom: 40px;
+  border: 2px dashed #bbb;
+  max-width: 600px;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+}
+
+/*Indicador de progreso circular*/
+.progreso {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #3498db 0%,
+    #3498db 75%,
+    #ecf0f1 75%,
+    #ecf0f1 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  border: 2px dashed #bbb;
+}
+
+/*Patrón decorativo*/
+.patron {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.05) 10px,
+    rgba(0, 0, 0, 0.05) 20px
+  );
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  margin-bottom: 40px;
+  border: 2px dashed #bbb;
+  max-width: 600px;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+}

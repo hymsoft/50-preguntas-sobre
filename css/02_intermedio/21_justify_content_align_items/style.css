@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Centrado perfecto con Flexbox*/
+.centro-total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+/*Centrado con Grid (más conciso)*/
+.grid-centro {
+  display: grid;
+  place-items: center;
+  min-height: 200px;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+/*Distribución de espacio*/
+.distribucion {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 200px;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+}
+
+.centro-total p,
+.grid-centro p,
+.distribucion p {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.distribucion p:nth-child(2) {
+  background: #50e3c2;
+  color: #333;
+}
+
+.distribucion p:nth-child(3) {
+  background: #f5a623;
+}

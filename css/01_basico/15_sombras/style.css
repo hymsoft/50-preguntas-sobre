@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  margin-inline: auto;
+  max-width: 800px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Sombra de texto*/
+.titulo-sombra {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Sombra de caja*/
+.caja-sombra {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  background: #50e3c2;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Sombra interna*/
+.caja-sombra-interna {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background: #f5a623;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Múltiples sombras*/
+.caja-multiple {
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.3),
+    8px 8px 20px rgba(0, 0, 0, 0.2);
+  background: #d0021b;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Sombra sin desenfoque*/
+.sombra-nitida {
+  box-shadow: 2px 2px 0 #000;
+  background: #7ed321;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin-inline: auto;
+}

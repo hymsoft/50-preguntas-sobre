@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Página de ejemplo que resume las buenas prácticas de HTML.">
+  <title>Página de ejemplo — buenas prácticas HTML</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h1>Guía de buenas prácticas HTML</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="guia.html">Guía</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Principios</h2>
+      <p>Una página accesible comienza por una estructura semántica correcta.</p>
+      <p>
+        Consulta la guía completa en
+        <a href="guia.html" target="_blank" rel="noopener">la documentación de referencia</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Resumen de ventas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Trimestre</th>
+            <th scope="col">Ventas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primero</td>
+            <td>1200</td>
+          </tr>
+          <tr>
+            <td>Segundo</td>
+            <td>1500</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Contacto</h2>
+      <form action="procesar.html" method="post">
+        <p>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </p>
+        <p>
+          <label for="correo">Correo:</label>
+          <input type="email" id="correo" name="correo" required>
+        </p>
+        <p><button type="submit">Enviar</button></p>
+      </form>
+    </section>
+  </main>
+
+  <aside>
+    <img src="ilustracion.png" alt="Ilustración de una página web accesible" width="400" height="300">
+    <p>Información complementaria sobre accesibilidad.</p>
+  </aside>
+
+  <footer>
+    <p>Pie de página con información de contacto del sitio.</p>
+  </footer>
+</body>
+</html>

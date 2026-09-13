@@ -1,0 +1,133 @@
+/*Posicionamiento estático: valor por defecto, sigue el flujo normal*/
+.estatico {
+  position: static;
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Posicionamiento relativo: se desplaza 20px a la derecha*/
+.relativo {
+  position: relative;
+  top: 0;
+  left: 20px;
+  background: #50e3c2;
+  color: #333;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+/*Contenedor para posicionamiento absoluto*/
+.contenedor {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/*Posicionamiento absoluto: dentro del contenedor*/
+.absoluto {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #f5a623;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Header fijo en la parte superior, con altura fija para poder reservarle espacio*/
+.header-fijo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  z-index: 1000;
+  background: white;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/*Reserva el espacio del header fijo para que no tape el contenido al cargar*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  margin-inline: auto;
+  max-width: 800px;
+  box-sizing: border-box;
+  margin-top: 50px;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Relleno didáctico solo para generar scroll y ver fixed/sticky.
+   No forma parte del concepto: no usa position.*/
+.relleno {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  min-height: 25vh;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.relleno:nth-of-type(even) {
+  background: #50e3c2;
+  color: #333;
+}
+
+/*Título sticky que se pega al hacer scroll */
+.titulo-sticky {
+  position: sticky;
+  top: 50px; /* debajo del header fijo, para que no se solapen al pegarse*/
+  background: white;
+  padding: 1rem;
+  color: #333;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  margin-inline: auto;
+}

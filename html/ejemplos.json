@@ -1,0 +1,415 @@
+[
+  {
+    "num": "01",
+    "titulo": "¿Qué es HTML y para qué se utiliza?",
+    "nivel": "basico",
+    "carpeta": "01_basico/01_que_es_html/",
+    "url": "01_basico/01_que_es_html/index.html"
+  },
+  {
+    "num": "02",
+    "titulo": "¿Cuál es la estructura básica de un documento HTML?",
+    "nivel": "basico",
+    "carpeta": "01_basico/02_estructura_basica/",
+    "url": "01_basico/02_estructura_basica/index.html"
+  },
+  {
+    "num": "03",
+    "titulo": "¿Qué diferencia existe entre una etiqueta y un elemento HTML?",
+    "nivel": "basico",
+    "carpeta": "01_basico/03_etiqueta_vs_elemento/",
+    "url": "01_basico/03_etiqueta_vs_elemento/index.html"
+  },
+  {
+    "num": "04",
+    "titulo": "¿Para qué sirve la declaración <!DOCTYPE html>?",
+    "nivel": "basico",
+    "carpeta": "01_basico/04_doctype/",
+    "url": "01_basico/04_doctype/index.html"
+  },
+  {
+    "num": "05",
+    "titulo": "¿Cuál es la diferencia entre <head> y <body>?",
+    "nivel": "basico",
+    "carpeta": "01_basico/05_head_vs_body/",
+    "url": "01_basico/05_head_vs_body/index.html"
+  },
+  {
+    "num": "06",
+    "titulo": "¿Cómo se define el título de una página en la pestaña del navegador?",
+    "nivel": "basico",
+    "carpeta": "01_basico/06_titulo_pestana/",
+    "url": "01_basico/06_titulo_pestana/index.html"
+  },
+  {
+    "num": "07",
+    "titulo": "¿Cómo se crean encabezados y cuál es su jerarquía?",
+    "nivel": "basico",
+    "carpeta": "01_basico/07_encabezados_jerarquia/",
+    "url": "01_basico/07_encabezados_jerarquia/index.html"
+  },
+  {
+    "num": "08",
+    "titulo": "¿Cómo se crea un párrafo de texto en HTML?",
+    "nivel": "basico",
+    "carpeta": "01_basico/08_parrafo/",
+    "url": "01_basico/08_parrafo/index.html"
+  },
+  {
+    "num": "09",
+    "titulo": "¿Cuál es la diferencia entre un elemento de bloque y uno en línea?",
+    "nivel": "basico",
+    "carpeta": "01_basico/09_bloque_vs_inline/",
+    "url": "01_basico/09_bloque_vs_inline/index.html"
+  },
+  {
+    "num": "10",
+    "titulo": "¿Cómo se agregan comentarios en HTML?",
+    "nivel": "basico",
+    "carpeta": "01_basico/10_comentarios/",
+    "url": "01_basico/10_comentarios/index.html"
+  },
+  {
+    "num": "11",
+    "titulo": "¿Cómo se insertan saltos de línea y líneas divisorias?",
+    "nivel": "basico",
+    "carpeta": "01_basico/11_saltos_linea/",
+    "url": "01_basico/11_saltos_linea/index.html"
+  },
+  {
+    "num": "12",
+    "titulo": "¿Cómo se crean enlaces o hipervínculos en HTML?",
+    "nivel": "basico",
+    "carpeta": "01_basico/12_enlaces/",
+    "url": "01_basico/12_enlaces/index.html"
+  },
+  {
+    "num": "13",
+    "titulo": "¿Qué atributo se usa para abrir un enlace en una pestaña nueva y qué consideración de seguridad tiene?",
+    "nivel": "basico",
+    "carpeta": "01_basico/13_target_blank/",
+    "url": "01_basico/13_target_blank/index.html"
+  },
+  {
+    "num": "14",
+    "titulo": "¿Cómo se insertan imágenes y qué atributos son obligatorios?",
+    "nivel": "basico",
+    "carpeta": "01_basico/14_imagenes/",
+    "url": "01_basico/14_imagenes/index.html"
+  },
+  {
+    "num": "15",
+    "titulo": "¿Qué diferencia existe entre los atributos href y src?",
+    "nivel": "basico",
+    "carpeta": "01_basico/15_href_vs_src/",
+    "url": "01_basico/15_href_vs_src/index.html"
+  },
+  {
+    "num": "16",
+    "titulo": "¿Qué son los atributos HTML y para qué sirven?",
+    "nivel": "basico",
+    "carpeta": "01_basico/16_atributos/",
+    "url": "01_basico/16_atributos/index.html"
+  },
+  {
+    "num": "17",
+    "titulo": "¿Cómo se crean listas ordenadas y desordenadas, y cuál es la diferencia entre <ol>, <ul> y <li>?",
+    "nivel": "basico",
+    "carpeta": "01_basico/17_listas/",
+    "url": "01_basico/17_listas/index.html"
+  },
+  {
+    "num": "18",
+    "titulo": "¿Qué son los elementos semánticos de HTML y por qué se recomienda usarlos?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/18_elementos_semanticos/",
+    "url": "02_intermedio/18_elementos_semanticos/index.html"
+  },
+  {
+    "num": "18",
+    "titulo": "¿Qué son los elementos semánticos de HTML y por qué se recomienda usarlos? (variante)",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/18_elementos_semanticos/",
+    "url": "02_intermedio/18_elementos_semanticos/index_02.html"
+  },
+  {
+    "num": "19",
+    "titulo": "¿Cuál es la diferencia entre <div> y <span>?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/19_div_vs_span/",
+    "url": "02_intermedio/19_div_vs_span/index.html"
+  },
+  {
+    "num": "20",
+    "titulo": "¿Para qué sirven <header>, <nav>, <main>, <section>, <article>, <aside> y <footer>?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/20_elementos_estructura/",
+    "url": "02_intermedio/20_elementos_estructura/index.html"
+  },
+  {
+    "num": "21",
+    "titulo": "¿Qué diferencia existe entre <article> y <section>, y cuándo conviene usar <section> en vez de <div>?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/21_article_vs_section/",
+    "url": "02_intermedio/21_article_vs_section/index.html"
+  },
+  {
+    "num": "22",
+    "titulo": "¿Cómo se construye una tabla en HTML?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/22_tabla/",
+    "url": "02_intermedio/22_tabla/index.html"
+  },
+  {
+    "num": "23",
+    "titulo": "¿Cómo se agrupan las filas de una tabla en cabecera, cuerpo y pie?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/23_thead_tbody_tfoot/",
+    "url": "02_intermedio/23_thead_tbody_tfoot/index.html"
+  },
+  {
+    "num": "24",
+    "titulo": "¿Cómo se combinan celdas en una tabla?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/24_colspan_rowspan/",
+    "url": "02_intermedio/24_colspan_rowspan/index.html"
+  },
+  {
+    "num": "24",
+    "titulo": "¿Cómo se combinan celdas en una tabla? (variante)",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/24_colspan_rowspan/",
+    "url": "02_intermedio/24_colspan_rowspan/index_02.html"
+  },
+  {
+    "num": "25",
+    "titulo": "¿Cuál es la estructura básica de un formulario HTML?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/25_formulario/",
+    "url": "02_intermedio/25_formulario/index.html"
+  },
+  {
+    "num": "26",
+    "titulo": "¿Qué tipos de <input> existen y cuándo conviene usar cada uno?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/26_tipos_input/",
+    "url": "02_intermedio/26_tipos_input/index.html"
+  },
+  {
+    "num": "27",
+    "titulo": "¿Para qué sirve <label> y cómo se asocia a un campo de formulario?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/27_label/",
+    "url": "02_intermedio/27_label/index.html"
+  },
+  {
+    "num": "27",
+    "titulo": "¿Para qué sirve <label> y cómo se asocia a un campo de formulario? (variante)",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/27_label/",
+    "url": "02_intermedio/27_label/index_02.html"
+  },
+  {
+    "num": "28",
+    "titulo": "¿Cómo se agrupan campos relacionados en un formulario?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/28_fieldset_legend/",
+    "url": "02_intermedio/28_fieldset_legend/index.html"
+  },
+  {
+    "num": "29",
+    "titulo": "¿Cómo se crean menús desplegables y áreas de texto?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/29_select_textarea/",
+    "url": "02_intermedio/29_select_textarea/index.html"
+  },
+  {
+    "num": "30",
+    "titulo": "¿Qué diferencia hay entre los botones submit, reset y button?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/30_botones/",
+    "url": "02_intermedio/30_botones/index.html"
+  },
+  {
+    "num": "31",
+    "titulo": "¿Para qué sirven los atributos placeholder, required, readonly y disabled?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/31_placeholder_required_readonly_disabled/",
+    "url": "02_intermedio/31_placeholder_required_readonly_disabled/index.html"
+  },
+  {
+    "num": "32",
+    "titulo": "¿Qué diferencia hay entre GET y POST en un formulario?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/32_get_vs_post/",
+    "url": "02_intermedio/32_get_vs_post/index.html"
+  },
+  {
+    "num": "32",
+    "titulo": "¿Qué diferencia hay entre GET y POST en un formulario? (variante)",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/32_get_vs_post/",
+    "url": "02_intermedio/32_get_vs_post/index_02.html"
+  },
+  {
+    "num": "33",
+    "titulo": "¿Cuál es la diferencia entre los atributos id, name y class?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/33_id_name_class/",
+    "url": "02_intermedio/33_id_name_class/index.html"
+  },
+  {
+    "num": "34",
+    "titulo": "¿Cómo se insertan audio y vídeo nativos?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/34_audio_video/",
+    "url": "02_intermedio/34_audio_video/index.html"
+  },
+  {
+    "num": "35",
+    "titulo": "¿Cómo influye la estructura HTML en la accesibilidad de una página?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/35_accesibilidad_estructura/",
+    "url": "03_avanzado/35_accesibilidad_estructura/index.html"
+  },
+  {
+    "num": "36",
+    "titulo": "¿Qué son los atributos ARIA y cuándo conviene usarlos?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/36_aria/",
+    "url": "03_avanzado/36_aria/index.html"
+  },
+  {
+    "num": "36",
+    "titulo": "¿Qué son los atributos ARIA y cuándo conviene usarlos? (variante)",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/36_aria/",
+    "url": "03_avanzado/36_aria/index_02.html"
+  },
+  {
+    "num": "37",
+    "titulo": "¿Cómo se crea una estructura de encabezados correcta y accesible?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/37_encabezados_accesibles/",
+    "url": "03_avanzado/37_encabezados_accesibles/index.html"
+  },
+  {
+    "num": "38",
+    "titulo": "¿Qué son los atributos globales de HTML?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/38_atributos_globales/",
+    "url": "03_avanzado/38_atributos_globales/index.html"
+  },
+  {
+    "num": "39",
+    "titulo": "¿Qué diferencia existe entre hidden, inert y aria-hidden?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/39_hidden_inert_aria_hidden/",
+    "url": "03_avanzado/39_hidden_inert_aria_hidden/index.html"
+  },
+  {
+    "num": "40",
+    "titulo": "¿Qué son los atributos data-* y para qué se usan?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/40_data_attributes/",
+    "url": "03_avanzado/40_data_attributes/index.html"
+  },
+  {
+    "num": "41",
+    "titulo": "¿Cómo se crean imágenes adaptables?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/41_imagenes_adaptables/",
+    "url": "03_avanzado/41_imagenes_adaptables/index.html"
+  },
+  {
+    "num": "41",
+    "titulo": "¿Cómo se crean imágenes adaptables? (variante)",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/41_imagenes_adaptables/",
+    "url": "03_avanzado/41_imagenes_adaptables/index_02.html"
+  },
+  {
+    "num": "42",
+    "titulo": "¿Cómo se integra contenido externo con <iframe>?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/42_iframe/",
+    "url": "03_avanzado/42_iframe/index.html"
+  },
+  {
+    "num": "43",
+    "titulo": "¿Cómo se incorporan datos estructurados (microdatos) en HTML?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/43_microdatos/",
+    "url": "03_avanzado/43_microdatos/index.html"
+  },
+  {
+    "num": "44",
+    "titulo": "¿Para qué sirven las metaetiquetas?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/44_metaetiquetas/",
+    "url": "03_avanzado/44_metaetiquetas/index.html"
+  },
+  {
+    "num": "44",
+    "titulo": "¿Para qué sirven las metaetiquetas? (variante)",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/44_metaetiquetas/",
+    "url": "03_avanzado/44_metaetiquetas/index_02.html"
+  },
+  {
+    "num": "45",
+    "titulo": "¿Cómo se gestionan los favicones e iconos?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/45_favicones_iconos/",
+    "url": "03_avanzado/45_favicones_iconos/index.html"
+  },
+  {
+    "num": "46",
+    "titulo": "¿Qué son los elementos <template> y <slot>?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/46_template_slot/",
+    "url": "03_avanzado/46_template_slot/index.html"
+  },
+  {
+    "num": "46",
+    "titulo": "¿Qué son los elementos <template> y <slot>? (variante)",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/46_template_slot/",
+    "url": "03_avanzado/46_template_slot/index_02.html"
+  },
+  {
+    "num": "47",
+    "titulo": "¿Qué es el elemento <dialog> y qué ventajas ofrece?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/47_dialog/",
+    "url": "03_avanzado/47_dialog/index.html"
+  },
+  {
+    "num": "48",
+    "titulo": "¿Cómo se crea un desplegable o \"acordeón\" nativo con <details> y <summary>?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/48_details_summary/",
+    "url": "03_avanzado/48_details_summary/index.html"
+  },
+  {
+    "num": "48",
+    "titulo": "¿Cómo se crea un desplegable o \"acordeón\" nativo con <details> y <summary>? (variante)",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/48_details_summary/",
+    "url": "03_avanzado/48_details_summary/index_02.html"
+  },
+  {
+    "num": "49",
+    "titulo": "¿Cómo se puede validar un documento HTML y qué errores permite detectar?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/49_validacion/",
+    "url": "03_avanzado/49_validacion/index.html"
+  },
+  {
+    "num": "50",
+    "titulo": "¿Cuáles son las buenas prácticas de una página HTML moderna, accesible y semánticamente correcta?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/50_buenas_practicas/",
+    "url": "03_avanzado/50_buenas_practicas/index.html"
+  }
+]

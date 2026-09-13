@@ -1,0 +1,95 @@
+/*Estilos generales para visualizar*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+.grid-basica,
+.grid-areas {
+  margin-bottom: 40px;
+  margin-inline: auto;
+  border: 2px dashed #bbb;
+  padding: 10px;
+  background: #fff;
+}
+
+/*Estilos de los items*/
+.header,
+.sidebar,
+.content,
+.aside,
+.footer {
+  background: #4a90e2;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar {
+  background: #50e3c2;
+  color: #333;
+}
+
+.content {
+  background: #f5a623;
+}
+
+.aside {
+  background: #d0021b;
+}
+
+.footer {
+  background: #7ed321;
+}
+
+/*Grid básica con tres columnas*/
+.grid-basica {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 16px;
+  min-height: 100vh;
+}
+
+/*Grid con áreas nombradas*/
+.grid-areas {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "sidebar content aside"
+    "footer footer footer";
+  gap: 8px;
+  min-height: 100vh;
+}
+
+/*Asignación de áreas — solo para la grid con áreas nombradas*/
+.grid-areas .header {
+  grid-area: header;
+}
+
+.grid-areas .sidebar {
+  grid-area: sidebar;
+}
+
+.grid-areas .content {
+  grid-area: content;
+}
+
+.grid-areas .aside {
+  grid-area: aside;
+}
+
+.grid-areas .footer {
+  grid-area: footer;
+}

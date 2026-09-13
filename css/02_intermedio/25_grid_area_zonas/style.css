@@ -1,0 +1,109 @@
+/*Estilos generales*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/*Layout con áreas nombradas*/
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "destacado destacado destacado"
+    "sidebar content aside"
+    "footer footer footer";
+  gap: 8px;
+  min-height: 100vh;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px dashed #bbb;
+  background: #fff;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/*Asignación de áreas*/
+.header {
+  grid-area: header;
+}
+
+.destacado {
+  grid-area: destacado;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/*Estilos visuales para cada zona*/
+.header,
+.destacado,
+.sidebar,
+.content,
+.aside,
+.footer {
+  padding: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.header {
+  background: #4a90e2;
+  min-height: 70px;
+  font-size: 1.3rem;
+}
+
+.destacado {
+  background: #f5a623;
+  min-height: 90px;
+  font-size: 1.3rem;
+}
+
+.sidebar {
+  background: #50e3c2;
+  color: #333;
+  min-height: 200px;
+}
+
+.content {
+  background: #7ed321;
+  color: #333;
+  min-height: 200px;
+  font-size: 1.2rem;
+}
+
+.aside {
+  background: #d0021b;
+  min-height: 200px;
+}
+
+.footer {
+  background: #9013fe;
+  min-height: 70px;
+  font-size: 1.1rem;
+}
