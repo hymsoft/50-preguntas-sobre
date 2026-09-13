@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        var __t = localStorage.getItem("pg:theme");
+        if (__t !== "dark" && __t !== "light") {
+          __t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = __t;
+      } catch (e) {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>50 preguntas · sobre ejemplos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/editor/editor.main.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-book="html">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-mark">50?</span>
+        <span class="brand-text"
+          ><span class="brand-title">50 preguntas sobre ...</span
+          ><span class="brand-sub">ejemplos</span></span
+        >
+      </div>
+      <nav class="book-nav" id="book-nav" role="tablist" aria-label="Seleccionar libro"></nav>
+      <button class="btn btn-icon" id="btn-theme" type="button" title="Cambiar tema" aria-label="Cambiar a tema oscuro"></button>
+      <div class="shortcut-hint" id="shortcut-hint">Ctrl+Enter · ejecutar</div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+          <input
+            id="search"
+            type="search"
+            placeholder="Buscar ejemplo…"
+            autocomplete="off"
+            aria-label="Buscar ejemplo"
+          />
+          <button
+            class="icon-btn"
+            id="btn-collapse"
+            title="Colapsar barra lateral"
+            aria-label="Colapsar barra lateral"
+            aria-expanded="true"
+          >
+            ◀
+          </button>
+        </div>
+        <div class="sidebar-scroll" id="sidebar-scroll">
+          <div class="empty" id="sidebar-empty" hidden>
+            <p>No se encontraron ejemplos.</p>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <section class="code-pane" aria-label="Código">
+          <div class="code-tabs" id="tabs" role="tablist" aria-label="Archivos del ejemplo"></div>
+          <button
+            class="wrap-toggle"
+            id="btn-wrap"
+            type="button"
+            title="Ajuste de línea"
+            aria-pressed="true"
+          >
+            ↵ wrap
+          </button>
+          <div class="editor-host" id="editor-host"></div>
+        </section>
+
+        <div
+          class="gutter"
+          id="gutter"
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="Redimensionar paneles"
+          tabindex="0"
+        ></div>
+
+        <section class="preview-pane" aria-label="Vista previa">
+          <div class="preview-chrome">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="preview-url" id="preview-url">—</span>
+            <span class="preview-actions">
+              <button class="btn" id="btn-run" hidden>Ejecutar</button>
+              <label class="auto-toggle" title="Ejecutar al editar">
+                <input type="checkbox" id="toggle-auto" checked />
+                <span>Auto</span>
+              </label>
+              <button class="btn" id="btn-reset">Reset</button>
+              <button class="btn" id="btn-open">Abrir en pestaña nueva</button>
+            </span>
+          </div>
+          <iframe
+            id="preview"
+            title="Vista previa del ejemplo"
+            sandbox="allow-scripts allow-forms allow-popups allow-modals"
+          ></iframe>
+        </section>
+      </main>
+    </div>
+
+    <footer class="app-footer">
+      <span class="status" id="status">Leyendo desde main</span>
+      <span class="credit">© 2026 <strong>Hugo A. Segura</strong> · HyMSoft · Derechos reservados</span>
+      <a id="link-github" href="#" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+    </footer>
+
+    <noscript>
+      <p class="noscript">Activá JavaScript para usar el playground.</p>
+    </noscript>
+
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
