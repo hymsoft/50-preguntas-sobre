@@ -42,7 +42,7 @@ p {
 }
 
 /*Especificidad: 1-0-0 (ID)*/
-# titulo {
+#titulo {
   color: green;
   background: #50e3c2;
   padding: 20px;
