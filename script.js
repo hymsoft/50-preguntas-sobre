@@ -51,7 +51,6 @@ const layoutEl = document.querySelector(".layout");
 
 let monaco = null;
 let editor = null;
-let boundModels = new Set();
 
 const state = {
   book: "html",
@@ -112,7 +111,7 @@ async function fetchText(url, retries = 2) {
       delay *= 2;
       continue;
     }
-    throw new Error(`HTTP ${res.status}`);
+    throw new Error(`HTTP ${res.status} ${url}`);
   }
 }
 
@@ -125,7 +124,8 @@ async function loadBooks() {
       try {
         const json = await fetchText(rawUrl(book.id, "ejemplos.json"));
         return { book, list: JSON.parse(json) };
-      } catch {
+      } catch (err) {
+        console.warn("[books]", book.id, err);
         return { book, list: null };
       }
     })
@@ -152,8 +152,8 @@ function renderBookNav() {
     const btn = document.createElement("button");
     btn.className = "book-pill";
     btn.type = "button";
-    btn.role = "tab";
     btn.dataset.book = book.id;
+    btn.setAttribute("aria-pressed", "false");
     btn.innerHTML = `<span class="accent-dot" style="--book-color:${book.color}"></span>${book.label}`;
     if (book.disabled) {
       btn.disabled = true;
@@ -172,7 +172,7 @@ async function selectBook(bookId) {
   state.book = bookId;
   document.body.dataset.book = bookId;
   bookNav.querySelectorAll(".book-pill").forEach((b) => {
-    b.setAttribute("aria-selected", String(b.dataset.book === bookId));
+    b.setAttribute("aria-pressed", String(b.dataset.book === bookId));
   });
 
   state.openLevel = null;
@@ -181,7 +181,7 @@ async function selectBook(bookId) {
   tabsEl.innerHTML = "";
   preview.srcdoc = "";
   previewUrl.textContent = "—";
-  linkGithub.href = "#";
+  linkGithub.href = `https://github.com/${GITHUB_USER}/${GITHUB_REPO}/tree/${GITHUB_BRANCH}`;
 
   const first = list[0];
   if (first) await openExample(first);
@@ -291,7 +291,50 @@ function highlightSidebar(url) {
 
 /* ---------- Ejemplos ---------- */
 
+async function loadFiles(book, folder, useSaved) {
+  const files = {};
+  const contents = {};
+  const available = [];
+
+  try {
+    const txt = await fetchText(rawUrl(book, folder + "index.html"));
+    files["index.html"] = txt;
+    if (useSaved) {
+      const saved = store.get(book, folder, "index.html");
+      contents["index.html"] = saved != null ? saved : txt;
+    } else {
+      contents["index.html"] = txt;
+    }
+    available.push("index.html");
+  } catch {
+    return null; /* sin index.html no hay ejemplo que mostrar */
+  }
+
+  const extras = [];
+  if (/style\.css/i.test(files["index.html"])) extras.push("style.css");
+  if (/script\.js/i.test(files["index.html"])) extras.push("script.js");
+
+  for (const name of extras) {
+    try {
+      const txt = await fetchText(rawUrl(book, folder + name));
+      files[name] = txt;
+      if (useSaved) {
+        const saved = store.get(book, folder, name);
+        contents[name] = saved != null ? saved : txt;
+      } else {
+        contents[name] = txt;
+      }
+      available.push(name);
+    } catch {
+      /* referenciado pero no existe en este ejemplo */
+    }
+  }
+
+  return { files, contents, available };
+}
+
 async function openExample(item) {
+  persistCurrent(true);
   $("status").textContent = `Leyendo ${item.carpeta}…`;
   state.current = item;
   previewUrl.textContent = `${state.book}/${item.url}`;
@@ -299,7 +342,6 @@ async function openExample(item) {
   highlightSidebar(item.url);
 
   const folder = item.carpeta;
-  const available = [];
   state.files = {};
   state.contents = {};
   state.editing = {};
@@ -308,43 +350,19 @@ async function openExample(item) {
     delete state.textModels[name];
   }
 
-  try {
-    const txt = await fetchText(rawUrl(state.book, folder + "index.html"));
-    state.files["index.html"] = txt;
-    const saved = store.get(state.book, folder, "index.html");
-    state.contents["index.html"] = saved != null ? saved : txt;
-    available.push("index.html");
-  } catch {
-    /* sin index.html no hay ejemplo que mostrar */
-  }
-
-  if (!available.includes("index.html")) {
+  const loaded = await loadFiles(state.book, folder, true);
+  if (!loaded) {
     $("status").textContent = `No se pudo cargar ${item.url}`;
     tabsEl.innerHTML = "";
     destroyEditor();
     preview.srcdoc = "";
     return;
   }
+  state.files = loaded.files;
+  state.contents = loaded.contents;
 
-  const htmlTxt = state.files["index.html"] || "";
-  const extras = [];
-  if (/style\.css/i.test(htmlTxt)) extras.push("style.css");
-  if (/script\.js/i.test(htmlTxt)) extras.push("script.js");
-
-  for (const name of extras) {
-    try {
-      const txt = await fetchText(rawUrl(state.book, folder + name));
-      state.files[name] = txt;
-      const saved = store.get(state.book, folder, name);
-      state.contents[name] = saved != null ? saved : txt;
-      available.push(name);
-    } catch {
-      /* referenciado pero no existe en este ejemplo */
-    }
-  }
-
-  renderTabs(available);
-  await ensureMonaco(() => buildEditor(available[0]));
+  renderTabs(loaded.available);
+  await ensureMonaco(() => buildEditor(loaded.available[0]));
   schedulePreview(0);
   $("status").textContent = `Leyendo desde ${GITHUB_BRANCH}`;
 }
@@ -374,28 +392,53 @@ function refreshTabs() {
 function ensureMonaco(cb) {
   if (monaco) return Promise.resolve(cb());
   return new Promise((resolve) => {
-    window.require.config({
-      paths: {
-        vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs",
-      },
-    });
-    window.require(["vs/editor/editor.main"], () => {
-      monaco = window.monaco;
-      monaco.editor.defineTheme("pg-light", {
-        base: "vs",
-        inherit: true,
-        rules: [],
-        colors: { "editor.background": "#FFFFFF" },
+    let settled = false;
+    const fail = (msg) => {
+      if (settled) return;
+      settled = true;
+      $("status").textContent = `${msg} Recargá el ejemplo para reintentar.`;
+      editorHost.innerHTML =
+        "<div class='skeleton' role='status'><span aria-hidden='true'>⚠</span><span>No se pudo cargar el editor. Recargá el ejemplo para reintentar.</span></div>";
+      resolve(null);
+    };
+    const timer = setTimeout(() => fail("No se pudo cargar el editor (timeout)."), 10000);
+    try {
+      window.require.config({
+        paths: {
+          vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs",
+        },
       });
-      monaco.editor.defineTheme("pg-dark", {
-        base: "vs-dark",
-        inherit: true,
-        rules: [],
-        colors: { "editor.background": "#1E1D1B" },
-      });
-      monaco.editor.setTheme(currentTheme() === "dark" ? "pg-dark" : "pg-light");
-      resolve(cb());
-    });
+      window.require(
+        ["vs/editor/editor.main"],
+        () => {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
+          monaco = window.monaco;
+          monaco.editor.defineTheme("pg-light", {
+            base: "vs",
+            inherit: true,
+            rules: [],
+            colors: { "editor.background": "#FFFFFF" },
+          });
+          monaco.editor.defineTheme("pg-dark", {
+            base: "vs-dark",
+            inherit: true,
+            rules: [],
+            colors: { "editor.background": "#1E1D1B" },
+          });
+          monaco.editor.setTheme(currentTheme() === "dark" ? "pg-dark" : "pg-light");
+          resolve(cb());
+        },
+        () => {
+          clearTimeout(timer);
+          fail("No se pudo cargar el editor.");
+        }
+      );
+    } catch {
+      clearTimeout(timer);
+      fail("No se pudo cargar el editor.");
+    }
   });
 }
 
@@ -414,7 +457,10 @@ function getModel(name, content) {
 }
 
 function buildEditor(name) {
-  tabsEl.querySelectorAll(".tab").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.file === name)));
+  tabsEl.querySelectorAll(".tab").forEach((b) => {
+    if (b.dataset.file === name) b.setAttribute("aria-current", "true");
+    else b.removeAttribute("aria-current");
+  });
 
   const model = getModel(name, state.contents[name] || "");
 
@@ -432,6 +478,7 @@ function buildEditor(name) {
       renderWhitespace: "selection",
       wordWrap: state.wrap ? "on" : "off",
     });
+    editor.onDidBlurEditorText(() => persistCurrent(true));
   } else {
     editor.setModel(model);
   }
@@ -447,7 +494,7 @@ function destroyEditor() {
     delete state.textModels[name];
   }
   editorHost.innerHTML =
-    "<div class='skeleton'><span class='spinner' aria-hidden='true'></span><span>Cargando ejemplo…</span></div>";
+    "<div class='skeleton' role='status'><span class='spinner' aria-hidden='true'></span><span>Cargando ejemplo…</span></div>";
 }
 
 /* ---------- Preview ---------- */
@@ -471,15 +518,17 @@ function combinedDoc() {
   const js = currentValue("script.js");
 
   if (css != null) {
+    const safeCss = css.replace(/<\/style/gi, "<\\/style");
     html = html.replace(
-      /<link\b[^>]*rel=["']stylesheet["'][^>]*href=["'][^"']*style\.css["'][^>]*\/?>/i,
-      `<style>\n/* style.css */\n${css}\n</style>`
+      /<link\b[^>]*rel=["']stylesheet["'][^>]*href=["'][^"']*style\.css(\?[^"']*)?["'][^>]*\/?>/gi,
+      `<style>\n/* style.css */\n${safeCss}\n</style>`
     );
   }
   if (js != null) {
+    const safeJs = js.replace(/<\/script/gi, "<\\/script");
     html = html.replace(
-      /<script\b[^>]*src=["'][^"']*script\.js["'][^>]*><\/script>/i,
-      `<script>\n/* script.js */\n${js}\n</script>`
+      /<script\b[^>]*src=["'][^"']*script\.js(\?[^"']*)?["'][^>]*><\/script>/gi,
+      `<script>\n/* script.js */\n${safeJs}\n</script>`
     );
   }
   return html;
@@ -489,14 +538,21 @@ function updatePreview() {
   const doc = combinedDoc();
   if (!doc) return;
   preview.srcdoc = doc;
+  persistCurrent(false);
+}
 
-  if (state.current) {
-    FILES.forEach((name) => {
-      if (state.files[name] != null) {
-        store.set(state.book, state.current.carpeta, name, currentValue(name));
-      }
-    });
-  }
+let lastPersist = 0;
+
+function persistCurrent(force = false) {
+  if (!state.current) return;
+  const now = Date.now();
+  if (!force && now - lastPersist < 2000) return;
+  lastPersist = now;
+  FILES.forEach((name) => {
+    if (state.files[name] != null && state.editing[name]) {
+      store.set(state.book, state.current.carpeta, name, currentValue(name));
+    }
+  });
 }
 
 async function resetExample() {
@@ -504,6 +560,8 @@ async function resetExample() {
   if (!item) return;
 
   const folder = item.carpeta;
+  const prevTab = tabsEl.querySelector('.tab[aria-current="true"]');
+  const prevFile = prevTab ? prevTab.dataset.file : null;
   state.files = {};
   state.contents = {};
   state.editing = {};
@@ -514,40 +572,14 @@ async function resetExample() {
     delete state.textModels[name];
   }
 
-  let any = false;
-  try {
-    const txt = await fetchText(rawUrl(state.book, folder + "index.html"));
-    state.files["index.html"] = txt;
-    state.contents["index.html"] = txt;
-    any = true;
-  } catch {
-    /* sin index.html no hay ejemplo que mostrar */
-  }
-
-  if (!any) return;
-
-  const htmlTxt = state.files["index.html"] || "";
-  const extras = [];
-  if (/style\.css/i.test(htmlTxt)) extras.push("style.css");
-  if (/script\.js/i.test(htmlTxt)) extras.push("script.js");
-
-  for (const name of extras) {
-    try {
-      const txt = await fetchText(rawUrl(state.book, folder + name));
-      state.files[name] = txt;
-      state.contents[name] = txt;
-      any = true;
-    } catch {
-      /* referenciado pero no existe */
-    }
-  }
-
-  if (!any) return;
+  const loaded = await loadFiles(state.book, folder, false);
+  if (!loaded) return;
+  state.files = loaded.files;
+  state.contents = loaded.contents;
 
   const names = FILES.filter((n) => state.files[n] != null);
   renderTabs(names);
-  const currentTab = tabsEl.querySelector('.tab[aria-selected="true"]');
-  buildEditor(currentTab ? currentTab.dataset.file : names[0]);
+  buildEditor(prevFile && names.includes(prevFile) ? prevFile : names[0]);
   schedulePreview(0);
 }
 
@@ -555,7 +587,13 @@ function openInNewTab() {
   const doc = combinedDoc();
   if (!doc) return;
   const blob = new Blob([doc], { type: "text/html;charset=utf-8" });
-  window.open(URL.createObjectURL(blob), "_blank");
+  const url = URL.createObjectURL(blob);
+  const w = window.open(url, "_blank", "noopener");
+  if (!w) {
+    $("status").textContent = "Permití popups para abrir en pestaña nueva";
+  } else {
+    setTimeout(() => URL.revokeObjectURL(url), 30000);
+  }
 }
 
 /* ---------- Tema ---------- */
@@ -596,13 +634,16 @@ btnTheme.addEventListener("click", () => {
 
 try {
   if (!localStorage.getItem(THEME_KEY)) {
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = (e) => {
       try {
         if (!localStorage.getItem(THEME_KEY)) applyTheme(e.matches ? "dark" : "light", false);
       } catch {
         /* sin almacenamiento */
       }
-    });
+    };
+    if (typeof mql.addEventListener === "function") mql.addEventListener("change", onChange);
+    else if (typeof mql.addListener === "function") mql.addListener(onChange);
   }
 } catch {
   /* sin almacenamiento */
@@ -613,6 +654,7 @@ paintThemeButton();
 
 window.addEventListener("keydown", (e) => {
   if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+    if (e.target === search) return;
     e.preventDefault();
     clearTimeout(debounceTimer);
     updatePreview();
@@ -639,15 +681,31 @@ btnWrap.addEventListener("click", () => {
   if (editor) editor.updateOptions({ wordWrap: state.wrap ? "on" : "off" });
 });
 
+let searchTimer = 0;
 search.addEventListener("input", () => {
-  const list = state.booksData[state.book];
-  if (list) renderSidebar(list);
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    const list = state.booksData[state.book];
+    if (list) renderSidebar(list);
+  }, 150);
 });
+
+window.addEventListener("beforeunload", () => persistCurrent(true));
 
 btnCollapse.addEventListener("click", () => {
   const collapsed = sidebar.classList.toggle("collapsed");
   btnCollapse.setAttribute("aria-expanded", String(!collapsed));
-  btnCollapse.textContent = collapsed ? "▶" : "◀";
+  btnCollapse.innerHTML = `<span aria-hidden="true">${collapsed ? "▶" : "◀"}</span>`;
+  if (collapsed) {
+    sidebarScroll.setAttribute("inert", "");
+    search.disabled = true;
+    if (sidebar.contains(document.activeElement) && document.activeElement !== btnCollapse) {
+      btnCollapse.focus();
+    }
+  } else {
+    sidebarScroll.removeAttribute("inert");
+    search.disabled = false;
+  }
 });
 
 /* ---------- Gutter ---------- */
@@ -657,31 +715,60 @@ function startResize(event) {
   gutter.classList.add("active");
   const startX = event.clientX;
   const startPct = (codePane.offsetWidth / layoutEl.offsetWidth) * 100;
+  let raf = 0;
+  let lastX = startX;
 
-  const onMove = (ev) => {
-    const deltaPct = ((ev.clientX - startX) / layoutEl.offsetWidth) * 100;
+  const apply = () => {
+    raf = 0;
+    const deltaPct = ((lastX - startX) / layoutEl.offsetWidth) * 100;
     const next = Math.min(85, Math.max(15, startPct + deltaPct));
     codePane.style.flexBasis = `${next}%`;
+    gutter.setAttribute("aria-valuenow", String(Math.round(next)));
+  };
+  const onMove = (ev) => {
+    lastX = ev.clientX;
+    if (!raf) raf = requestAnimationFrame(apply);
   };
   const onUp = () => {
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0;
     gutter.classList.remove("active");
     window.removeEventListener("pointermove", onMove);
     window.removeEventListener("pointerup", onUp);
+    window.removeEventListener("pointercancel", onUp);
   };
   window.addEventListener("pointermove", onMove);
   window.addEventListener("pointerup", onUp);
+  window.addEventListener("pointercancel", onUp);
+  try {
+    gutter.setPointerCapture(event.pointerId);
+  } catch {
+    /* navegador sin pointer capture */
+  }
 }
 
 gutter.addEventListener("pointerdown", startResize);
 
 gutter.addEventListener("keydown", (e) => {
   const step = e.shiftKey ? 10 : 5;
-  let basis = parseFloat(getComputedStyle(codePane).flexBasis) || 50;
+  // No usar getComputedStyle: devuelve px resueltos (ej. "600px") que al
+  // compararse con el rango 15-85 saltarían al máximo. Se lee el estado
+  // guardado en aria-valuenow, que siempre está en %.
+  let basis = parseFloat(gutter.getAttribute("aria-valuenow")) || 50;
   if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
     e.preventDefault();
     basis = e.key === "ArrowLeft" ? Math.max(15, basis - step) : Math.min(85, basis + step);
     codePane.style.flexBasis = `${basis}%`;
+    gutter.setAttribute("aria-valuenow", String(Math.round(basis)));
+  } else if (e.key === "Home" || e.key === "End") {
+    e.preventDefault();
+    basis = e.key === "Home" ? 15 : 85;
+    codePane.style.flexBasis = `${basis}%`;
+    gutter.setAttribute("aria-valuenow", String(basis));
   }
 });
 
-loadBooks();
+loadBooks().catch((err) => {
+  $("status").textContent = "Error inicial al cargar los libros.";
+  console.error("[books] init", err);
+});

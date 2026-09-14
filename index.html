@@ -4,17 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="color-scheme" content="light dark" />
     <script>
-      try {
-        var __t = localStorage.getItem("pg:theme");
-        if (__t !== "dark" && __t !== "light") {
-          __t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      // Evita FOUC de tema: aplica data-theme de forma síncrona antes del primer paint.
+      (function () {
+        try {
+          let t = localStorage.getItem("pg:theme");
+          if (t !== "dark" && t !== "light") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.dataset.theme = t;
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
         }
-        document.documentElement.dataset.theme = __t;
-      } catch (e) {
-        document.documentElement.dataset.theme = "light";
-      }
+      })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Playground interactivo de la serie 50 preguntas sobre…: 50 ejemplos de HTML y 50 de CSS para ver, editar y ejecutar en vivo."
+    />
+    <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)" />
     <title>50 preguntas · sobre ejemplos</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +32,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- Monaco 0.52.2 pineado en jsDelivr (sin SRI: loader dinámico de workers no compatible con integrity) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/editor/editor.main.css"
@@ -30,6 +40,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body data-book="html">
+    <h1 class="visually-hidden">50 preguntas sobre ejemplos — playground</h1>
+    <a class="skip-link" href="#preview">Saltar a vista previa</a>
     <header class="app-header">
       <div class="brand">
         <span class="brand-mark">50?</span>
@@ -38,16 +50,17 @@
           ><span class="brand-sub">ejemplos</span></span
         >
       </div>
-      <nav class="book-nav" id="book-nav" role="tablist" aria-label="Seleccionar libro"></nav>
-      <button class="btn btn-icon" id="btn-theme" type="button" title="Cambiar tema" aria-label="Cambiar a tema oscuro"></button>
-      <div class="shortcut-hint" id="shortcut-hint">Ctrl+Enter · ejecutar</div>
+      <nav class="book-nav" id="book-nav" role="group" aria-label="Seleccionar libro"></nav>
+      <button class="btn btn-icon" id="btn-theme" type="button" title="Cambiar tema" aria-label="Cambiar a tema oscuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
+      <div class="shortcut-hint" id="shortcut-hint" aria-hidden="true">Ctrl+Enter · ejecutar</div>
     </header>
 
     <div class="layout">
-      <aside class="sidebar" id="sidebar">
+      <aside class="sidebar" id="sidebar" aria-label="Lista de ejemplos">
         <div class="sidebar-top">
           <input
             id="search"
+            class="search-input"
             type="search"
             placeholder="Buscar ejemplo…"
             autocomplete="off"
@@ -60,7 +73,7 @@
             aria-label="Colapsar barra lateral"
             aria-expanded="true"
           >
-            ◀
+            <span aria-hidden="true">◀</span>
           </button>
         </div>
         <div class="sidebar-scroll" id="sidebar-scroll">
@@ -72,7 +85,8 @@
 
       <main class="workspace">
         <section class="code-pane" aria-label="Código">
-          <div class="code-tabs" id="tabs" role="tablist" aria-label="Archivos del ejemplo"></div>
+          <h2 class="visually-hidden">Código del ejemplo</h2>
+          <div class="code-tabs" id="tabs" role="group" aria-label="Archivos del ejemplo"></div>
           <button
             class="wrap-toggle"
             id="btn-wrap"
@@ -91,25 +105,30 @@
           role="separator"
           aria-orientation="vertical"
           aria-label="Redimensionar paneles"
+          aria-valuemin="15"
+          aria-valuemax="85"
+          aria-valuenow="50"
           tabindex="0"
         ></div>
 
         <section class="preview-pane" aria-label="Vista previa">
+          <h2 class="visually-hidden">Vista previa del ejemplo</h2>
           <div class="preview-chrome">
             <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
             <span class="preview-url" id="preview-url">—</span>
             <span class="preview-actions">
-              <button class="btn" id="btn-run" hidden>Ejecutar</button>
-              <label class="auto-toggle" title="Ejecutar al editar">
-                <input type="checkbox" id="toggle-auto" checked />
+              <button class="btn" id="btn-run" type="button" hidden>Ejecutar</button>
+              <label class="auto-toggle">
+                <input type="checkbox" id="toggle-auto" title="Ejecutar al editar" checked />
                 <span>Auto</span>
               </label>
-              <button class="btn" id="btn-reset">Reset</button>
-              <button class="btn" id="btn-open">Abrir en pestaña nueva</button>
+              <button class="btn" id="btn-reset" type="button">Reset</button>
+              <button class="btn btn-accent" id="btn-open" type="button">Abrir en pestaña nueva</button>
             </span>
           </div>
           <iframe
             id="preview"
+            class="preview-frame"
             title="Vista previa del ejemplo"
             sandbox="allow-scripts allow-forms allow-popups allow-modals"
           ></iframe>
@@ -118,9 +137,9 @@
     </div>
 
     <footer class="app-footer">
-      <span class="status" id="status">Leyendo desde main</span>
+      <span class="status" id="status" role="status" aria-live="polite">Leyendo desde main</span>
       <span class="credit">© 2026 <strong>Hugo A. Segura</strong> · HyMSoft · Derechos reservados</span>
-      <a id="link-github" href="#" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+      <a id="link-github" href="https://github.com/hymsoft/50-preguntas-sobre/tree/main" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
     </footer>
 
     <noscript>
