@@ -14,8 +14,8 @@ const LEVELS = [
 ];
 
 const BOOKS = [
-  { id: "html", label: "HTML", color: "#E34F26", disabled: false },
-  { id: "css", label: "CSS", color: "#1572B6", disabled: false },
+  { id: "html", label: "HTML", color: "#E34C26", disabled: false },
+  { id: "css", label: "CSS", color: "#005A9C", disabled: false },
   { id: "js", label: "JavaScript", color: "#F7DF1E", disabled: true },
 ];
 
@@ -48,6 +48,13 @@ const sidebar = $("sidebar");
 const gutter = $("gutter");
 const codePane = document.querySelector(".code-pane");
 const layoutEl = document.querySelector(".layout");
+const consolePane = $("console-pane");
+const consoleBody = $("console-body");
+const consoleLog = $("console-log");
+const consoleEmpty = $("console-empty");
+const consoleCount = $("console-count");
+const btnConsoleClear = $("btn-console-clear");
+const btnConsoleToggle = $("btn-console-toggle");
 
 let monaco = null;
 let editor = null;
@@ -120,7 +127,6 @@ async function fetchText(url, retries = 2) {
 async function loadBooks() {
   const results = await Promise.all(
     BOOKS.map(async (book) => {
-      if (book.disabled) return { book, list: null };
       try {
         const json = await fetchText(rawUrl(book.id, "ejemplos.json"));
         return { book, list: JSON.parse(json) };
@@ -133,7 +139,7 @@ async function loadBooks() {
 
   results.forEach(({ book, list }) => {
     state.booksData[book.id] = list;
-    if (list && book.disabled) book.disabled = false;
+    book.disabled = !list;
   });
 
   renderBookNav();
@@ -179,6 +185,8 @@ async function selectBook(bookId) {
   renderSidebar(list);
   destroyEditor();
   tabsEl.innerHTML = "";
+  clearConsole();
+  setConsoleVisible(false);
   preview.srcdoc = "";
   previewUrl.textContent = "—";
   linkGithub.href = `https://github.com/${GITHUB_USER}/${GITHUB_REPO}/tree/${GITHUB_BRANCH}`;
@@ -355,6 +363,8 @@ async function openExample(item) {
     $("status").textContent = `No se pudo cargar ${item.url}`;
     tabsEl.innerHTML = "";
     destroyEditor();
+    clearConsole();
+    setConsoleVisible(false);
     preview.srcdoc = "";
     return;
   }
@@ -363,6 +373,7 @@ async function openExample(item) {
 
   renderTabs(loaded.available);
   await ensureMonaco(() => buildEditor(loaded.available[0]));
+  await getOjos();
   schedulePreview(0);
   $("status").textContent = `Leyendo desde ${GITHUB_BRANCH}`;
 }
@@ -512,7 +523,160 @@ function currentValue(name) {
   return state.files[name]; // solo sin editor: original
 }
 
-function combinedDoc() {
+/* ---------- Consola JS (solo lectura, solo libro js) ---------- */
+
+const CONSOLE_MAX = 200;
+
+let consoleTotal = 0;
+
+const CONSOLE_SHIM = `(function(){
+try{
+var MAX=${CONSOLE_MAX};var n=0;
+function fmt(v){
+if(typeof v==="string")return v;
+if(v==null)return String(v);
+if(v instanceof Error)return v.stack||String(v);
+if(typeof v==="function")return"[Function "+(v.name||"anonymous")+"]";
+if(typeof v==="object"){
+try{
+if(v.nodeType===1)return"<"+String(v.tagName).toLowerCase()+">";
+return JSON.stringify(v);
+}catch(e){
+try{return String(v);}catch(_){return"[Object]"}}
+}
+return String(v);
+}
+function send(level,args){
+if(n>=MAX)return;n++;
+try{
+var text=args.map(fmt).join(" ").slice(0,2000);
+parent.postMessage({__pgConsole:true,level:level,text:text}, "*");
+}catch(e){}
+}
+["log","info","warn","error","debug"].forEach(function(m){
+var orig=null;
+try{orig=console[m]?console[m].bind(console):null;}catch(e){}
+console[m]=function(){
+try{send(m,Array.prototype.slice.call(arguments));}catch(e){}
+if(orig){try{orig.apply(null,arguments);}catch(e){}}
+};
+});
+console.table=function(d){try{send("log",[d]);}catch(e){}};
+console.clear=function(){try{parent.postMessage({__pgConsole:true,level:"__clear"}, "*");}catch(e){}};
+window.addEventListener("error",function(e){
+send("error",[(e.message||"Error")+(e.lineno?" ("+e.lineno+":"+e.colno+")":"")]);
+});
+window.addEventListener("unhandledrejection",function(e){
+var r=e.reason;
+send("error",[(r&&r.stack)||(r&&r.message)||String(r)]);
+});
+}catch(e){}
+})();`;
+
+const LOG_BADGE = {
+  log: ">",
+  info: "i",
+  warn: "!",
+  error: "×",
+  debug: "·",
+};
+
+function hasJsExample() {
+  return state.book === "js" && state.files["script.js"] != null;
+}
+
+function setConsoleVisible(show) {
+  if (!consolePane) return;
+  consolePane.dataset.visible = show ? "true" : "false";
+}
+
+function updateConsoleEmpty() {
+  const empty = consoleLog.childElementCount === 0;
+  consoleEmpty.hidden = !empty;
+  consoleCount.hidden = consoleTotal === 0;
+  if (consoleTotal > 0) consoleCount.textContent = String(consoleTotal);
+}
+
+function clearConsole() {
+  consoleLog.innerHTML = "";
+  consoleTotal = 0;
+  updateConsoleEmpty();
+}
+
+function appendLog(level, text) {
+  if (level === "__clear") {
+    clearConsole();
+    return;
+  }
+  const safeLevel = LOG_BADGE[level] ? level : "log";
+  const line = document.createElement("div");
+  line.className = "log-line";
+  line.dataset.level = safeLevel;
+
+  const time = document.createElement("span");
+  time.className = "log-time";
+  const d = new Date();
+  const hh = String(d.getHours()).padStart(2, "0");
+  const mm = String(d.getMinutes()).padStart(2, "0");
+  const ss = String(d.getSeconds()).padStart(2, "0");
+  time.textContent = `${hh}:${mm}:${ss}`;
+
+  const badge = document.createElement("span");
+  badge.className = "log-badge";
+  badge.setAttribute("aria-hidden", "true");
+  badge.textContent = LOG_BADGE[safeLevel];
+
+  const msg = document.createElement("span");
+  msg.className = "log-text";
+  msg.textContent = text || "";
+
+  line.append(time, badge, msg);
+  const nearBottom =
+    consoleBody.scrollHeight - consoleBody.scrollTop - consoleBody.clientHeight < 60;
+  consoleLog.append(line);
+  while (consoleLog.childElementCount > CONSOLE_MAX) {
+    consoleLog.firstElementChild?.remove();
+  }
+  consoleTotal += 1;
+  updateConsoleEmpty();
+  if (nearBottom) consoleBody.scrollTop = consoleBody.scrollHeight;
+}
+
+window.addEventListener("message", (event) => {
+  if (event.source !== preview.contentWindow) return;
+  const data = event.data;
+  if (!data || data.__pgConsole !== true) return;
+  if (state.book !== "js") return;
+  appendLog(data.level, data.text);
+});
+
+btnConsoleClear?.addEventListener("click", clearConsole);
+
+btnConsoleToggle?.addEventListener("click", () => {
+  const collapsed = consolePane.classList.toggle("collapsed");
+  btnConsoleToggle.setAttribute("aria-expanded", String(!collapsed));
+  btnConsoleToggle.textContent = collapsed ? "Mostrar" : "Ocultar";
+});
+
+/* ---------- Helper compartido js/ojos.js ---------- */
+
+let ojosCache = null;
+let ojosPromise = null;
+
+function getOjos() {
+  if (ojosCache != null) return Promise.resolve(ojosCache);
+  if (!ojosPromise) {
+    ojosPromise = fetchText(rawUrl("js", "ojos.js"))
+      .then((txt) => {
+        ojosCache = txt;
+        return txt;
+      })
+      .catch(() => null);
+  }
+  return ojosPromise;
+}
+
+function combinedDoc(includeConsole = true) {
   let html = currentValue("index.html") ?? state.files["index.html"] ?? "";
   const css = currentValue("style.css");
   const js = currentValue("script.js");
@@ -526,17 +690,32 @@ function combinedDoc() {
   }
   if (js != null) {
     const safeJs = js.replace(/<\/script/gi, "<\\/script");
+    const shim =
+      includeConsole && state.book === "js"
+        ? `<script>\n/* consola playground (solo lectura) */\n${CONSOLE_SHIM}\n</script>\n`
+        : "";
     html = html.replace(
       /<script\b[^>]*src=["'][^"']*script\.js(\?[^"']*)?["'][^>]*><\/script>/gi,
-      `<script>\n/* script.js */\n${safeJs}\n</script>`
+      `${shim}<script>\n/* script.js */\n${safeJs}\n</script>`
+    );
+  }
+  if (ojosCache != null) {
+    // El srcdoc no resuelve relativos ("../../ojos.js" → 404 contra el portal),
+    // así que se inlina el helper compartido de los ojos.
+    const safeOjos = ojosCache.replace(/<\/script/gi, "<\\/script");
+    html = html.replace(
+      /<script\b[^>]*src=["'][^"']*ojos\.js["'][^>]*>\s*<\/script\s*>/gi,
+      `<script>\n/* ../../ojos.js */\n${safeOjos}\n</script>`
     );
   }
   return html;
 }
 
 function updatePreview() {
-  const doc = combinedDoc();
+  const doc = combinedDoc(true);
   if (!doc) return;
+  clearConsole();
+  setConsoleVisible(hasJsExample());
   preview.srcdoc = doc;
   persistCurrent(false);
 }
@@ -580,11 +759,12 @@ async function resetExample() {
   const names = FILES.filter((n) => state.files[n] != null);
   renderTabs(names);
   buildEditor(prevFile && names.includes(prevFile) ? prevFile : names[0]);
+  clearConsole();
   schedulePreview(0);
 }
 
 function openInNewTab() {
-  const doc = combinedDoc();
+  const doc = combinedDoc(false);
   if (!doc) return;
   const blob = new Blob([doc], { type: "text/html;charset=utf-8" });
   const url = URL.createObjectURL(blob);
@@ -768,6 +948,7 @@ gutter.addEventListener("keydown", (e) => {
   }
 });
 
+getOjos(); // precarga el helper de los ojos en paralelo
 loadBooks().catch((err) => {
   $("status").textContent = "Error inicial al cargar los libros.";
   console.error("[books] init", err);
