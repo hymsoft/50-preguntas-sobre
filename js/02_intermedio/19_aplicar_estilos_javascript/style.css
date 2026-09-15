@@ -1,0 +1,127 @@
+:root {
+  --fondo: #FFFBEA;
+  --texto: #1A1A1A;
+  --acento: #F7DF1E;
+  --blanco: #FFFFFF;
+  --borde: #E8E8E8;
+  --gris: #5A5A5A;
+  --sombra: rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 2rem 1rem 3rem;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+  border-top: 6px solid var(--acento);
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+button {
+  font: inherit;
+  background: var(--texto);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 4px 10px var(--sombra);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+input, select, textarea {
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--borde);
+  border-radius: 8px;
+  background: var(--blanco);
+  max-width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+form, ul, .seccion {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px var(--sombra);
+}
+
+form label {
+  display: block;
+  margin: 0.75rem 0 0.25rem;
+  font-weight: 600;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  margin: 0.35rem 0;
+}
+
+a {
+  color: var(--texto);
+  text-decoration-color: var(--acento);
+  text-decoration-thickness: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px var(--sombra);
+}
+.caja {
+  padding: 20px;
+}
+
+.caja.activa {
+  border-color: var(--texto);
+  border-width: 2px;
+}
+
+.destacada {
+  background: #FFF3CD;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.oculta {
+  display: none;
+}
+
+.modo-oscuro {
+  background: #222;
+  color: #fff;
+}
+
+.nueva-clase {
+  outline: 3px solid var(--acento);
+}

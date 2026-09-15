@@ -1,0 +1,359 @@
+[
+  {
+    "num": "01",
+    "titulo": "¿Qué es JavaScript y qué papel cumple en el desarrollo web?",
+    "nivel": "basico",
+    "carpeta": "01_basico/01_que_es_javascript/",
+    "url": "01_basico/01_que_es_javascript/index.html"
+  },
+  {
+    "num": "02",
+    "titulo": "¿Cómo se incluye JavaScript en un documento HTML?",
+    "nivel": "basico",
+    "carpeta": "01_basico/02_como_se_incluye_javascript/",
+    "url": "01_basico/02_como_se_incluye_javascript/index.html"
+  },
+  {
+    "num": "03",
+    "titulo": "¿Qué diferencia existe entre var, let y const?",
+    "nivel": "basico",
+    "carpeta": "01_basico/03_diferencia_var_let_const/",
+    "url": "01_basico/03_diferencia_var_let_const/index.html"
+  },
+  {
+    "num": "04",
+    "titulo": "¿Qué tipos de datos primitivos existen en JavaScript?",
+    "nivel": "basico",
+    "carpeta": "01_basico/04_tipos_datos_primitivos/",
+    "url": "01_basico/04_tipos_datos_primitivos/index.html"
+  },
+  {
+    "num": "05",
+    "titulo": "¿Qué es el tipado dinámico y cómo se comporta JavaScript respecto a los tipos?",
+    "nivel": "basico",
+    "carpeta": "01_basico/05_tipado_dinamico/",
+    "url": "01_basico/05_tipado_dinamico/index.html"
+  },
+  {
+    "num": "06",
+    "titulo": "¿Cómo se usan los operadores aritméticos, de comparación y lógicos?",
+    "nivel": "basico",
+    "carpeta": "01_basico/06_operadores/",
+    "url": "01_basico/06_operadores/index.html"
+  },
+  {
+    "num": "07",
+    "titulo": "¿Qué diferencia hay entre == y ===?",
+    "nivel": "basico",
+    "carpeta": "01_basico/07_diferencia_igualdad_estricta/",
+    "url": "01_basico/07_diferencia_igualdad_estricta/index.html"
+  },
+  {
+    "num": "08",
+    "titulo": "¿Cómo funcionan las estructuras condicionales if, else y switch?",
+    "nivel": "basico",
+    "carpeta": "01_basico/08_estructuras_condicionales/",
+    "url": "01_basico/08_estructuras_condicionales/index.html"
+  },
+  {
+    "num": "09",
+    "titulo": "¿Cómo funcionan los bucles for, while y do...while?",
+    "nivel": "basico",
+    "carpeta": "01_basico/09_bucles/",
+    "url": "01_basico/09_bucles/index.html"
+  },
+  {
+    "num": "10",
+    "titulo": "¿Qué son los arrays y cuáles son sus métodos básicos?",
+    "nivel": "basico",
+    "carpeta": "01_basico/10_arrays/",
+    "url": "01_basico/10_arrays/index.html"
+  },
+  {
+    "num": "11",
+    "titulo": "¿Qué son los objetos literales y cómo se accede a sus propiedades?",
+    "nivel": "basico",
+    "carpeta": "01_basico/11_objetos_literales/",
+    "url": "01_basico/11_objetos_literales/index.html"
+  },
+  {
+    "num": "12",
+    "titulo": "¿Cómo se declaran y se invocan funciones en JavaScript?",
+    "nivel": "basico",
+    "carpeta": "01_basico/12_funciones/",
+    "url": "01_basico/12_funciones/index.html"
+  },
+  {
+    "num": "13",
+    "titulo": "¿Qué diferencia hay entre una función declarada, una función expresión y una función flecha?",
+    "nivel": "basico",
+    "carpeta": "01_basico/13_tipos_funciones/",
+    "url": "01_basico/13_tipos_funciones/index.html"
+  },
+  {
+    "num": "14",
+    "titulo": "¿Qué son las plantillas literales (template literals)?",
+    "nivel": "basico",
+    "carpeta": "01_basico/14_plantillas_literales/",
+    "url": "01_basico/14_plantillas_literales/index.html"
+  },
+  {
+    "num": "15",
+    "titulo": "¿Qué es la consola del navegador y para qué se utiliza console.log?",
+    "nivel": "basico",
+    "carpeta": "01_basico/15_consola_navegador/",
+    "url": "01_basico/15_consola_navegador/index.html"
+  },
+  {
+    "num": "16",
+    "titulo": "¿Qué es el DOM y qué relación tiene con HTML y JavaScript?",
+    "nivel": "basico",
+    "carpeta": "01_basico/16_dom_introduccion/",
+    "url": "01_basico/16_dom_introduccion/index.html"
+  },
+  {
+    "num": "17",
+    "titulo": "¿Cómo se seleccionan elementos del DOM?",
+    "nivel": "basico",
+    "carpeta": "01_basico/17_seleccion_elementos_dom/",
+    "url": "01_basico/17_seleccion_elementos_dom/index.html"
+  },
+  {
+    "num": "18",
+    "titulo": "¿Cómo se modifica el contenido y los atributos de un elemento del DOM?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/18_modificar_contenido_atributos_dom/",
+    "url": "02_intermedio/18_modificar_contenido_atributos_dom/index.html"
+  },
+  {
+    "num": "19",
+    "titulo": "¿Cómo se aplican estilos a un elemento desde JavaScript?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/19_aplicar_estilos_javascript/",
+    "url": "02_intermedio/19_aplicar_estilos_javascript/index.html"
+  },
+  {
+    "num": "20",
+    "titulo": "¿Cómo se crean, insertan y eliminan elementos del DOM dinámicamente?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/20_crear_insertar_eliminar_elementos_dom/",
+    "url": "02_intermedio/20_crear_insertar_eliminar_elementos_dom/index.html"
+  },
+  {
+    "num": "21",
+    "titulo": "¿Qué son los eventos en JavaScript y cómo se escuchan con `addEventListener`?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/21_eventos_addeventlistener/",
+    "url": "02_intermedio/21_eventos_addeventlistener/index.html"
+  },
+  {
+    "num": "22",
+    "titulo": "¿Qué diferencia hay entre `event.target` y `event.currentTarget`?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/22_event_target_currenttarget/",
+    "url": "02_intermedio/22_event_target_currenttarget/index.html"
+  },
+  {
+    "num": "23",
+    "titulo": "¿Qué es la propagación de eventos (bubbling y capturing) y cómo se detiene?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/23_propagacion_eventos/",
+    "url": "02_intermedio/23_propagacion_eventos/index.html"
+  },
+  {
+    "num": "24",
+    "titulo": "¿Cómo se previene el comportamiento por defecto de un evento?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/24_prevenir_comportamiento_defecto/",
+    "url": "02_intermedio/24_prevenir_comportamiento_defecto/index.html"
+  },
+  {
+    "num": "25",
+    "titulo": "¿Qué es el ámbito (scope) de una variable y cómo funciona el scope de bloque?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/25_ambito_scope_variable/",
+    "url": "02_intermedio/25_ambito_scope_variable/index.html"
+  },
+  {
+    "num": "26",
+    "titulo": "¿Qué es el hoisting en JavaScript?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/26_hoisting_javascript/",
+    "url": "02_intermedio/26_hoisting_javascript/index.html"
+  },
+  {
+    "num": "27",
+    "titulo": "¿Qué son los closures y para qué sirven?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/27_closures/",
+    "url": "02_intermedio/27_closures/index.html"
+  },
+  {
+    "num": "28",
+    "titulo": "¿Qué es `this` en JavaScript y cómo cambia según el contexto de ejecución?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/28_this_javascript/",
+    "url": "02_intermedio/28_this_javascript/index.html"
+  },
+  {
+    "num": "29",
+    "titulo": "¿Qué son los métodos de array de orden superior?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/29_metodos_array_orden_superior/",
+    "url": "02_intermedio/29_metodos_array_orden_superior/index.html"
+  },
+  {
+    "num": "30",
+    "titulo": "¿Cómo se accede y se envían los datos de un formulario con JavaScript?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/30_acceder_enviar_datos_formulario/",
+    "url": "02_intermedio/30_acceder_enviar_datos_formulario/index.html"
+  },
+  {
+    "num": "31",
+    "titulo": "¿Cómo se valida un formulario del lado del cliente con JavaScript?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/31_validar_formulario_javascript/",
+    "url": "02_intermedio/31_validar_formulario_javascript/index.html"
+  },
+  {
+    "num": "32",
+    "titulo": "¿Qué es JSON y cómo se convierte entre JSON y objetos JavaScript?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/32_json_conversion_objetos/",
+    "url": "02_intermedio/32_json_conversion_objetos/index.html"
+  },
+  {
+    "num": "33",
+    "titulo": "¿Qué son `localStorage` y `sessionStorage`, y en qué se diferencian?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/33_localstorage_sessionstorage/",
+    "url": "02_intermedio/33_localstorage_sessionstorage/index.html"
+  },
+  {
+    "num": "34",
+    "titulo": "¿Qué es la desestructuración (destructuring) de arrays y objetos?",
+    "nivel": "intermedio",
+    "carpeta": "02_intermedio/34_desestructuracion_arrays_objetos/",
+    "url": "02_intermedio/34_desestructuracion_arrays_objetos/index.html"
+  },
+  {
+    "num": "35",
+    "titulo": "¿Qué es la asincronía en JavaScript y por qué es fundamental en el navegador?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/35_asincronia_javascript/",
+    "url": "03_avanzado/35_asincronia_javascript/index.html"
+  },
+  {
+    "num": "36",
+    "titulo": "¿Qué es el Event Loop y cómo se relaciona con el call stack y la cola de tareas?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/36_event_loop_call_stack/",
+    "url": "03_avanzado/36_event_loop_call_stack/index.html"
+  },
+  {
+    "num": "37",
+    "titulo": "¿Qué son las Promesas y cómo se encadenan?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/37_promesas/",
+    "url": "03_avanzado/37_promesas/index.html"
+  },
+  {
+    "num": "38",
+    "titulo": "¿Cómo funcionan `async` y `await`?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/38_async_await/",
+    "url": "03_avanzado/38_async_await/index.html"
+  },
+  {
+    "num": "39",
+    "titulo": "¿Cómo se realizan peticiones HTTP con la API `fetch`?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/39_fetch_peticiones_http/",
+    "url": "03_avanzado/39_fetch_peticiones_http/index.html"
+  },
+  {
+    "num": "40",
+    "titulo": "¿Cómo se manejan errores en JavaScript con `try`, `catch` y `finally`?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/40_manejo_errores/",
+    "url": "03_avanzado/40_manejo_errores/index.html"
+  },
+  {
+    "num": "41",
+    "titulo": "¿Qué son los módulos de JavaScript y cómo se usan `import` y `export`?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/41_modulos_javascript/",
+    "url": "03_avanzado/41_modulos_javascript/index.html"
+  },
+  {
+    "num": "42",
+    "titulo": "¿Qué son el operador spread y el operador rest, y en qué se diferencian?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/42_spread_rest/",
+    "url": "03_avanzado/42_spread_rest/index.html"
+  },
+  {
+    "num": "43",
+    "titulo": "¿Qué son los parámetros por defecto en una función?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/43_parametros_por_defecto/",
+    "url": "03_avanzado/43_parametros_por_defecto/index.html"
+  },
+  {
+    "num": "44",
+    "titulo": "¿Qué es el debouncing y el throttling, y cuándo conviene usar cada uno?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/44_debouncing_throttling/",
+    "url": "03_avanzado/44_debouncing_throttling/index.html"
+  },
+  {
+    "num": "45",
+    "titulo": "¿Qué son las Web APIs del navegador y qué ejemplos comunes existen?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/45_web_apis_navegador/",
+    "url": "03_avanzado/45_web_apis_navegador/index.html"
+  },
+  {
+    "num": "46",
+    "titulo": "¿Qué son los Web Workers y para qué se utilizan?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/46_web_workers/",
+    "url": "03_avanzado/46_web_workers/index.html"
+  },
+  {
+    "num": "47",
+    "titulo": "¿Qué son los Service Workers y qué relación tienen con las PWA?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/47_service_workers_pwa/",
+    "url": "03_avanzado/47_service_workers_pwa/index.html"
+  },
+  {
+    "num": "48",
+    "titulo": "¿Qué es la delegación de eventos y qué ventajas ofrece?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/48_delegacion_eventos/",
+    "url": "03_avanzado/48_delegacion_eventos/index.html"
+  },
+  {
+    "num": "48",
+    "titulo": "¿Qué es la delegación de eventos y qué ventajas ofrece? (variante)",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/48_delegacion_eventos/",
+    "url": "03_avanzado/48_delegacion_eventos/index_02.html"
+  },
+  {
+    "num": "49",
+    "titulo": "¿Cómo se optimiza el rendimiento de un script JavaScript en el navegador?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/49_optimizacion_rendimiento/",
+    "url": "03_avanzado/49_optimizacion_rendimiento/index.html"
+  },
+  {
+    "num": "50",
+    "titulo": "¿Cuáles son las buenas prácticas de un JavaScript moderno, mantenible y orientado a la web?",
+    "nivel": "avanzado",
+    "carpeta": "03_avanzado/50_buenas_practicas/",
+    "url": "03_avanzado/50_buenas_practicas/index.html"
+  }
+]

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="style.css">
+<div class="ojos" aria-hidden="true"><span class="ojo"><span class="pupila"></span></span><span class="ojo"><span class="pupila"></span></span></div>
+  <p class="consola-msg">Mirá la consola <kbd>F12</kbd></p>
+<!-- Script interno -->
+<script>
+  console.log('Este código se ejecuta directamente');
+</script>
+
+<!-- Script externo -->
+<script src="mi-script.js"></script>
+
+<!-- Script externo con defer (se ejecuta después del parsing) -->
+<script defer src="script-defer.js"></script>
+
+<!-- Script externo con async (se ejecuta cuando está listo) -->
+<script async src="script-async.js"></script>
+<script src="../../ojos.js"></script>
